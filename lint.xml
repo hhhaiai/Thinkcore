@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="NewApi">
+        <ignore path="src/com/core/filepath/TFilePathManager.java" />
+        <ignore path="src/com/sqlcrypt/database/TSCursor.java" />
+        <ignore path="src/com/treecore/activity/TActivity.java" />
+        <ignore path="src/com/treecore/activity/fragment/BookDetailFragment.java" />
+        <ignore path="src/com/treecore/activity/fragment/BookListFragment.java" />
+        <ignore path="src/com/treecore/activity/fragment/TFragment.java" />
+        <ignore path="src/com/treecore/activity/fragment/TListFragment.java" />
+        <ignore path="src/com/treecore/filepath/TFilePathManager.java" />
+        <ignore path="src/com/treecore/nineoldandroids/view/ViewPropertyAnimatorHC.java" />
+        <ignore path="src/com/treecore/storage/TStorageUtils.java" />
+        <ignore path="src/com/treecore/utils/TImageUtils.java" />
+        <ignore path="src/com/treecore/utils/TMimeUtils.java" />
+        <ignore path="src/com/treecore/utils/TStorageUtils.java" />
+        <ignore path="src/com/treecore/utils/encryption/TRsa.java" />
+        <ignore path="src/com/treecore/utils/stl/LinkedBlockingDeque.java" />
+        <ignore path="src/com/treecore/utils/task/TTask.java" />
+        <ignore path="src/com/treecore/view/flowview/CoverFlowView.java" />
+        <ignore path="src/com/treecore/view/flowview/TFlowView.java" />
+    </issue>
+</lint>
