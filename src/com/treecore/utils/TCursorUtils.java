@@ -54,54 +54,54 @@ public class TCursorUtils {
 	}
 
 	// Cursor
-	public static String getString(com.sqlcrypt.database.Cursor cursor,
-			String columnName) {
-		try {
-			int index = cursor.getColumnIndex(columnName);
-			if (index == -1)
-				return "";
-			String result = cursor.getString(index);
-			if (result == null)
-				return "";
-			return result;
-		} catch (Exception e) {
-		}
-		return "";
-	}
-
-	public static int getInt(com.sqlcrypt.database.Cursor cursor,
-			String columnName) {
-		try {
-			int index = cursor.getColumnIndex(columnName);
-			if (index == -1)
-				return -1;
-			return cursor.getInt(index);
-		} catch (Exception e) {
-		}
-		return -1;
-	}
-
-	public static long getLong(com.sqlcrypt.database.Cursor cursor,
-			String columnName) {
-		try {
-			int index = cursor.getColumnIndex(columnName);
-			if (index == -1)
-				return 0;
-			return cursor.getLong(index);
-		} catch (Exception e) {
-		}
-		return 0;
-	}
-
-	public static float getFloat(com.sqlcrypt.database.Cursor cursor,
-			String columnName) {
-		try {
-			int index = cursor.getColumnIndex(columnName);
-			if (index == -1)
-				return -1;
-			return cursor.getFloat(index);
-		} catch (Exception e) {
-		}
-		return -1;
-	}
+	// public static String getString(com.sqlcrypt.database.Cursor cursor,
+	// String columnName) {
+	// try {
+	// int index = cursor.getColumnIndex(columnName);
+	// if (index == -1)
+	// return "";
+	// String result = cursor.getString(index);
+	// if (result == null)
+	// return "";
+	// return result;
+	// } catch (Exception e) {
+	// }
+	// return "";
+	// }
+	//
+	// public static int getInt(com.sqlcrypt.database.Cursor cursor,
+	// String columnName) {
+	// try {
+	// int index = cursor.getColumnIndex(columnName);
+	// if (index == -1)
+	// return -1;
+	// return cursor.getInt(index);
+	// } catch (Exception e) {
+	// }
+	// return -1;
+	// }
+	//
+	// public static long getLong(com.sqlcrypt.database.Cursor cursor,
+	// String columnName) {
+	// try {
+	// int index = cursor.getColumnIndex(columnName);
+	// if (index == -1)
+	// return 0;
+	// return cursor.getLong(index);
+	// } catch (Exception e) {
+	// }
+	// return 0;
+	// }
+	//
+	// public static float getFloat(com.sqlcrypt.database.Cursor cursor,
+	// String columnName) {
+	// try {
+	// int index = cursor.getColumnIndex(columnName);
+	// if (index == -1)
+	// return -1;
+	// return cursor.getFloat(index);
+	// } catch (Exception e) {
+	// }
+	// return -1;
+	// }
 }

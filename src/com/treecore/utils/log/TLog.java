@@ -6,9 +6,12 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import com.treecore.TApplication;
+import com.treecore.utils.TStringUtils;
 
 //日志打印类
 public class TLog {
+	private static final String Tag = TLog.class.getSimpleName();
+
 	private static boolean mIgnoreAll = false;
 	private static boolean mIgnoreInfo = false;
 	private static boolean mIgnoreDebug = false;
@@ -78,13 +81,13 @@ public class TLog {
 		}
 	}
 
-	public static void d(Object object, String message) {
-		printLoger(DEBUG, object == null ? "" : object, message);
+	public static void d(Object object, String message, Object... args) {
+		printLoger(DEBUG, object == null ? "" : object, message, args);
 	}
 
-	public static void d(Object object, Throwable e) {
+	public static void d(Object object, Throwable e, Object... args) {
 		printLoger(DEBUG, object == null ? "" : object,
-				e == null ? "" : e.getMessage());
+				e == null ? "" : e.getMessage(), args);
 	}
 
 	public static void e(Object object, Throwable e) {
@@ -92,8 +95,8 @@ public class TLog {
 				e == null ? "" : e.getMessage());
 	}
 
-	public static void e(Object object, String message) {
-		printLoger(ERROR, object == null ? "" : object, message);
+	public static void e(Object object, String message, Object... args) {
+		printLoger(ERROR, object == null ? "" : object, message, args);
 	}
 
 	public static void e(Object object, String message, Throwable e) {
@@ -101,8 +104,8 @@ public class TLog {
 				+ (e == null ? "" : e.getMessage()));
 	}
 
-	public static void i(Object object, String message) {
-		printLoger(INFO, object == null ? "" : object, message);
+	public static void i(Object object, String message, Object... args) {
+		printLoger(INFO, object == null ? "" : object, message, args);
 	}
 
 	public static void i(Object object, Throwable e) {
@@ -110,8 +113,8 @@ public class TLog {
 				e == null ? "" : e.getMessage());
 	}
 
-	public static void v(Object object, String message) {
-		printLoger(VERBOSE, object == null ? "" : object, message);
+	public static void v(Object object, String message, Object... args) {
+		printLoger(VERBOSE, object == null ? "" : object, message, args);
 	}
 
 	public static void v(Object object, Throwable e) {
@@ -119,8 +122,8 @@ public class TLog {
 				e == null ? "" : e.getMessage());
 	}
 
-	public static void w(Object object, String message) {
-		printLoger(WARN, object == null ? "" : object, message);
+	public static void w(Object object, String message, Object... args) {
+		printLoger(WARN, object == null ? "" : object, message, args);
 	}
 
 	public static void w(Object object, Throwable e) {
@@ -128,16 +131,16 @@ public class TLog {
 				e == null ? "" : e.getMessage());
 	}
 
-	public static void d(String tag, String message) {
-		printLoger(DEBUG, tag, message);
+	public static void d(String tag, String message, Object... args) {
+		printLoger(DEBUG, tag, message, args);
 	}
 
 	public static void d(String tag, Throwable e) {
 		printLoger(DEBUG, tag, e == null ? "" : e.getMessage());
 	}
 
-	public static void e(String tag, String message) {
-		printLoger(ERROR, tag, message);
+	public static void e(String tag, String message, Object... args) {
+		printLoger(ERROR, tag, message, args);
 	}
 
 	public static void e(String tag, Throwable e) {
@@ -145,43 +148,52 @@ public class TLog {
 	}
 
 	public static void e(String tag, String message, Throwable e) {
-		printLoger(ERROR, tag, message + " " + (e == null ? "" : e.getMessage()));
+		printLoger(ERROR, tag, message + " "
+				+ (e == null ? "" : e.getMessage()));
 	}
 
-	public static void i(String tag, String message) {
-		printLoger(INFO, tag, message);
+	public static void i(String tag, String message, Object... args) {
+		printLoger(INFO, tag, message, args);
 	}
 
 	public static void i(String tag, Throwable e) {
 		printLoger(INFO, tag, e == null ? "" : e.getMessage());
 	}
 
-	public static void v(String tag, String message) {
-		printLoger(VERBOSE, tag, message);
+	public static void v(String tag, String message, Object... args) {
+		printLoger(VERBOSE, tag, message, args);
 	}
 
 	public static void v(String tag, Throwable e) {
 		printLoger(VERBOSE, tag, e == null ? "" : e.getMessage());
 	}
 
-	public static void w(String tag, String message) {
-		printLoger(WARN, tag, message);
+	public static void w(String tag, String message, Object... args) {
+		printLoger(WARN, tag, message, args);
 	}
 
 	public static void w(String tag, Throwable e) {
 		printLoger(WARN, tag, e == null ? "" : e.getMessage());
 	}
 
-	public static void println(int priority, String tag, String message) {
-		printLoger(priority, tag, message);
+	public static void println(int priority, String tag, String message,
+			Object... args) {
+		printLoger(priority, tag, message, args);
 	}
 
-	private static void printLoger(int priority, Object object, String message) {
-		Class<?> cls = object.getClass();
-		String tag = cls.getName();
-		String arrays[] = tag.split("\\.");
-		tag = arrays[arrays.length - 1];
-		printLoger(priority, tag, message);
+	private static void printLoger(int priority, Object object, String message,
+			Object... args) {
+		String tag = Tag;
+		try {
+			Class<?> cls = object.getClass();
+			tag = cls.getName();
+			String arrays[] = tag.split("\\.");
+			tag = arrays[arrays.length - 1];
+		} catch (Exception e) {
+			tag = Tag;
+		}
+
+		printLoger(priority, tag, String.format(message, args));
 	}
 
 	private static void printLoger(int priority, String tag, String message) {
