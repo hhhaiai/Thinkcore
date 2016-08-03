@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<lint>
-    <issue id="NewApi">
-        <ignore path="src/com/testcore/universalimageloader/sample/activity/HomeActivity.java" />
-        <ignore path="src/com/testcore/universalimageloader/sample/widget/UILWidgetProvider.java" />
-    </issue>
-</lint>
