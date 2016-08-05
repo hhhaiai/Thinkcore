@@ -7,7 +7,6 @@ import android.telephony.TelephonyManager;
 
 import java.util.UUID;
 
-import com.thinkcore.TApplication;
 import com.thinkcore.storage.TStorageUtils;
 import com.thinkcore.utils.TStringUtils;
 import com.thinkcore.utils.config.TPreferenceConfig;

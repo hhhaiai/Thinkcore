@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ThinkCore.iml" filepath="$PROJECT_DIR$/ThinkCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thinkcore/Thinkcore.iml" filepath="$PROJECT_DIR$/Thinkcore/Thinkcore.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/testThinkcore/app.iml" filepath="$PROJECT_DIR$/testThinkcore/app.iml" />
     </modules>
   </component>
 </project>

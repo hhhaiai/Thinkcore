@@ -8,8 +8,9 @@ import java.util.Date;
 
 import android.util.Log;
 
-import com.thinkcore.activity.annotation.TField;
-import com.thinkcore.activity.annotation.TTransparent;
+import com.thinkcore.data.TField;
+import com.thinkcore.data.TTransparent;
+
 
 public final class TReflecterUtils {
 	public static Class<?> mCurrentClass;
@@ -25,7 +26,7 @@ public final class TReflecterUtils {
 				|| clazz.equals(Double.class) || clazz.equals(Float.class)
 				|| clazz.equals(Character.class) || clazz.equals(Short.class)
 				|| clazz.equals(Boolean.class) || clazz.equals(Date.class)
-				|| clazz.equals(Date.class)
+				|| clazz.equals(java.util.Date.class)
 				|| clazz.equals(java.sql.Date.class) || clazz.isPrimitive();
 	}
 
@@ -99,7 +100,7 @@ public final class TReflecterUtils {
 
 	// 获取指定的方法
 	public static Method getMethod(Class<?> classObject, String methodName,
-			Class<?>... parametersType) {
+								   Class<?>... parametersType) {
 		Class<?> sCls = classObject.getSuperclass();
 		while (sCls != Object.class) {
 			try {
@@ -119,7 +120,7 @@ public final class TReflecterUtils {
 
 	// 获取整型值
 	public static final int getIntValue(Object classObject, String paramString,
-			int paramInt) {
+										int paramInt) {
 		setClass(classObject.getClass().getName());
 		Field localField = getField(paramString);
 		if (localField != null)
@@ -168,7 +169,7 @@ public final class TReflecterUtils {
 
 	// 获取静态属性
 	public static Object getStaticProperty(String paramString1,
-			String paramString2) {
+										   String paramString2) {
 		setClass(paramString1);
 		Field localField = getField(paramString2);
 		Object localObject1 = null;
@@ -194,7 +195,7 @@ public final class TReflecterUtils {
 
 	// 调用方法
 	public static Object invokeMethod(Object paramObject, String paramString,
-			Class<?>[] paramArrayOfClass, Object[] paramArrayOfObject) {
+									  Class<?>[] paramArrayOfClass, Object[] paramArrayOfObject) {
 		Class localClass = paramObject.getClass();
 		try {
 			Method localMethod = localClass.getDeclaredMethod(paramString,
@@ -224,14 +225,14 @@ public final class TReflecterUtils {
 
 	// 调用方法
 	public static Object invokeMethod(Object paramObject, String paramString,
-			Object[] paramArrayOfObject) {
+									  Object[] paramArrayOfObject) {
 		return invokeMethod(paramObject, paramString,
 				getArgsClasses(paramArrayOfObject), paramArrayOfObject);
 	}
 
 	// 调用指定的方法
 	public static Object invokeMethod(Method method, Object receiver,
-			Object... args) {
+									  Object... args) {
 		try {
 			return method.invoke(receiver, args);
 		} catch (IllegalArgumentException e) {
@@ -247,21 +248,21 @@ public final class TReflecterUtils {
 
 	// 调用静态方法
 	public static Object invokeStaticMethod(String paramString1,
-			String paramString2) {
+											String paramString2) {
 		return invokeStaticMethod(paramString1, paramString2, (Object[]) null);
 	}
 
 	// 调用静态方法
 	public static Object invokeStaticMethod(String paramString1,
-			String paramString2, Object[] paramArrayOfObject) {
+											String paramString2, Object[] paramArrayOfObject) {
 		return invokeStaticMethod(paramString1, paramString2,
 				paramArrayOfObject, getArgsClasses(paramArrayOfObject));
 	}
 
 	// 调用静态方法
 	public static Object invokeStaticMethod(String paramString1,
-			String paramString2, Object[] paramArrayOfObject,
-			Class<?>[] paramArrayOfClass) {
+											String paramString2, Object[] paramArrayOfObject,
+											Class<?>[] paramArrayOfClass) {
 		Class localClass = null;
 		try {
 			localClass = Class.forName(paramString1);
@@ -292,7 +293,7 @@ public final class TReflecterUtils {
 
 	// 新一个实例
 	public static Object newInstance(String paramString,
-			Object[] paramArrayOfObject) {
+									 Object[] paramArrayOfObject) {
 		try {
 			Constructor localConstructor = Class.forName(paramString)
 					.getDeclaredConstructor(getArgsClasses(paramArrayOfObject));
@@ -306,7 +307,7 @@ public final class TReflecterUtils {
 
 	// 新一个实例
 	public static Object newInstance(String paramString,
-			Object[] paramArrayOfObject, Class<?>[] paramArrayOfClass) {
+									 Object[] paramArrayOfObject, Class<?>[] paramArrayOfClass) {
 		try {
 			Constructor localConstructor = Class.forName(paramString)
 					.getDeclaredConstructor(paramArrayOfClass);
@@ -332,7 +333,7 @@ public final class TReflecterUtils {
 
 	// 设置属性
 	public static void setProperty(Object paramObject1, String paramString,
-			Object paramObject2) {
+								   Object paramObject2) {
 		try {
 			Field localField = paramObject1.getClass().getDeclaredField(
 					paramString);
@@ -344,7 +345,7 @@ public final class TReflecterUtils {
 
 	// 设置静态属性
 	public static void setStaticProperty(String paramString1,
-			String paramString2, Object paramObject) {
+										 String paramString2, Object paramObject) {
 		setClass(paramString1);
 		Field localField = getField(paramString2);
 		if (localField == null)
@@ -364,7 +365,7 @@ public final class TReflecterUtils {
 	}
 
 	public static Object getFieldValue(Class<?> fieldClass, String fieldName,
-			Object instance) {
+									   Object instance) {
 		try {
 			final Field field = fieldClass.getDeclaredField(fieldName);
 			field.setAccessible(true);
@@ -376,7 +377,7 @@ public final class TReflecterUtils {
 	}
 
 	public static void setFieldValue(Class<?> fieldClass, String fieldName,
-			Object instance, Object value) {
+									 Object instance, Object value) {
 		try {
 			final Field field = fieldClass.getDeclaredField(fieldName);
 			field.setAccessible(true);
@@ -387,7 +388,7 @@ public final class TReflecterUtils {
 	}
 
 	public static Object invokeMethod(Class<?> methodClass, String methodName,
-			Class<?>[] parameters, Object instance, Object... arguments) {
+									  Class<?>[] parameters, Object instance, Object... arguments) {
 		try {
 			final Method method = methodClass.getDeclaredMethod(methodName,
 					parameters);

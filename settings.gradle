@@ -1,1 +1,1 @@
-include ':app', ':Thinkcore'
+include ':testThinkcore', ':Thinkcore'

@@ -2,11 +2,9 @@ package com.thinkcore.activity;
 
 import java.util.ArrayList;
 
-import com.thinkcore.TApplication;
 import com.thinkcore.dialog.TDialogManager;
+import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
-import com.thinkcore.utils.THandler;
-import com.thinkcore.utils.TStringUtils;
 import com.thinkcore.utils.TToastUtils;
 import com.thinkcore.utils.task.TITaskListener;
 import com.thinkcore.utils.task.TTask;
@@ -14,14 +12,13 @@ import com.thinkcore.utils.task.TTask.Task;
 import com.thinkcore.utils.task.TTask.TaskEvent;
 
 import android.app.Activity;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.os.Message;
-import android.view.View;
-import android.view.ViewGroup.LayoutParams;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 //界面
 public abstract class TActivity extends Activity implements TITaskListener {
@@ -30,11 +27,6 @@ public abstract class TActivity extends Activity implements TITaskListener {
 	public enum Status {
 		NONE, CREATED, STARTED, RESUMED, PAUSED, STOPPED, DESTORYED
 	}
-
-	/** 模块的名字 */
-	private String mModuleName = "";
-	/** 布局文件的名字 */
-	private String mLayouName = "";
 
 	protected Context mContext;
 	protected TTask mActivityTask;
@@ -48,20 +40,11 @@ public abstract class TActivity extends Activity implements TITaskListener {
 		mStatus = Status.CREATED;
 
 		initActivityParameter(getIntent());
-
 		TActivityManager.getInstance().addActivity(this);// 添加activity
-		getModuleName();// 初始化模块名
-		if (TStringUtils.isEmpty(mLayouName))
-			mLayouName = mContext.getPackageName();
-		initInjector();// 加载类注入器
-		loadDefautLayout();// 自动加载默认布局
+
+		EventBus.getDefault().register(this);
 	}
 
-	@Override
-	public void setContentView(int layoutResID) { // 设置视图
-		super.setContentView(layoutResID);
-		TActivityManager.getInstance().getInjector().injectView(this); // 由于view必须在视图记载之后添加注入
-	}
 
 	@Override
 	public void finish() {
@@ -94,6 +77,7 @@ public abstract class TActivity extends Activity implements TITaskListener {
 
 	@Override
 	protected void onDestroy() {
+
 		TActivityManager.getInstance().removeActivity(this);
 
 		TDialogManager.hideProgressDialog(this);
@@ -108,6 +92,8 @@ public abstract class TActivity extends Activity implements TITaskListener {
 		mStatus = Status.DESTORYED;
 
 		mContext = null;
+
+		EventBus.getDefault().unregister(this);
 		super.onDestroy();
 	}
 
@@ -115,7 +101,11 @@ public abstract class TActivity extends Activity implements TITaskListener {
 	public void onTask(Task task, TaskEvent event, Object... params) {
 	}
 
-	protected void startTask(int taskID, String... params) {
+	@Subscribe(threadMode = ThreadMode.MAIN)
+	public void processEvent(TEvent event) {
+	}
+
+	protected void startTask(int taskID, Object... params) {
 		if (mActivityTask == null) {
 			mActivityTask = new TTask();
 			mActivityTask.setIXTaskListener(this);
@@ -127,55 +117,6 @@ public abstract class TActivity extends Activity implements TITaskListener {
 	protected void stopTask() {
 		if (mActivityTask != null)
 			mActivityTask.stopTask();
-	}
-
-	protected void handleMessage(Message msg) {
-	}
-
-	/**
-	 * 初始化注入器
-	 */
-	private void initInjector() {
-		TActivityManager.getInstance().getInjector().injectResource(this);
-		TActivityManager.getInstance().getInjector().inject(this);
-	}
-
-	/**
-	 * 自动加载默认布局
-	 */
-	private void loadDefautLayout() {
-		try {
-			int layoutResID = TActivityManager.getInstance().getLayoutLoader()
-					.getLayoutID(mLayouName);
-			setContentView(layoutResID);
-		} catch (Exception e) {
-		}
-	}
-
-	public void setContentView(View view, LayoutParams params) {// 设置视图
-		super.setContentView(view, params);
-		// 由于view必须在视图记载之后添加注入
-		TActivityManager.getInstance().getInjector().injectView(this);
-	}
-
-	public void setContentView(View view) {// 设置视图
-		super.setContentView(view);
-		// 由于view必须在视图记载之后添加注入
-		TActivityManager.getInstance().getInjector().injectView(this);
-	}
-
-	public String getModuleName() {// 获取模块的名字
-		if (mModuleName == null || mModuleName.equalsIgnoreCase("")) {
-			mModuleName = getClass().getName().substring(0,
-					getClass().getName().length() - 8);
-			String arrays[] = mModuleName.split("\\.");
-			mModuleName = mModuleName = arrays[arrays.length - 1].toLowerCase();
-		}
-		return mModuleName;
-	}
-
-	public void setModuleName(String moduleName) {// 设置模块的名字
-		mModuleName = moduleName;
 	}
 
 	private void initActivityParameter(Intent intent) {
@@ -204,16 +145,12 @@ public abstract class TActivity extends Activity implements TITaskListener {
 		return mStatus;
 	}
 
-	public boolean isActivity() {
+	public boolean isActivityByStatus() {
 		return mStatus != Status.DESTORYED && mStatus != Status.PAUSED
 				&& mStatus != Status.STOPPED;
 	}
 
 	protected void makeText(String content) {
 		TToastUtils.makeText(mContext, content);
-	}
-
-	public static String getResString(int id) {
-		return TApplication.getInstance().getString(id);
 	}
 }

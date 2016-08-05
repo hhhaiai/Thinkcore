@@ -398,7 +398,7 @@ public class THanziToPinyin {
 			for (int i = 0; i < locale.length; i++) {
 				if (locale[i].equals(Locale.CHINA)) {
 					// Do self validation just once.
-					if (!TApplication.isRelease()) {
+					if (TApplication.isApkDebugable()) {
 						Log.d(TAG, "Self validation. Result: "
 								+ doSelfValidation());
 					}

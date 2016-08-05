@@ -38,18 +38,18 @@ public class TTask {
 		return mTask;
 	}
 
-	public void newTask1(int TaskId, String... params) {
-		stopTask();
-		mTask = new Task(TaskId, params);
-	}
-
-	public void executeTask1(String... params) {
-		if (TAndroidVersionUtils.hasHoneycomb()) {
-			mTask.executeOnExecutor(mExecutorService, "");
-		} else {
-			mTask.execute("");
-		}
-	}
+//	public void newTask1(int TaskId, Object... params) {
+//		stopTask();
+//		mTask = new Task(TaskId, params);
+//	}
+//
+//	public void executeTask1(Object... params) {
+//		if (TAndroidVersionUtils.hasHoneycomb()) {
+//			mTask.executeOnExecutor(mExecutorService, "");
+//		} else {
+//			mTask.execute("");
+//		}
+//	}
 
 	public void startTask(int TaskId) {
 		stopTask();
@@ -63,7 +63,7 @@ public class TTask {
 		}
 	}
 
-	public void startTask(int TaskId, String... params) {
+	public void startTask(int TaskId, Object... params) {
 		stopTask();
 
 		mTask = new Task(TaskId, params);
@@ -74,7 +74,7 @@ public class TTask {
 		}
 	}
 
-	public void startTask(String... params) {
+	public void startTask(Object... params) {
 		stopTask();
 
 		mTask = new Task(0, params);
@@ -102,15 +102,15 @@ public class TTask {
 		mIListener = listener;
 	}
 
-	public class Task extends AsyncTask<String, Integer, Boolean> {
+	public class Task extends AsyncTask<Object, Integer, Boolean> {
 		protected String mErrorString = "";
 		protected Task mThis;
 		private int mTaskId = 0;
 		private boolean mBCancel = false;
-		private ArrayList<String> mParameters = new ArrayList<String>();
+		private ArrayList<Object> mParameters = new ArrayList<Object>();
 		private Object mResultObject;
 
-		public Task(int taskId, String... params) {
+		public Task(int taskId, Object... params) {
 			mTaskId = taskId;
 			mThis = this;
 			if (params != null) {
@@ -121,7 +121,7 @@ public class TTask {
 		}
 
 		@Override
-		protected Boolean doInBackground(String... params) {
+		protected Boolean doInBackground(Object... params) {
 			boolean result = false;
 			if (mBCancel)
 				return false;
@@ -138,7 +138,7 @@ public class TTask {
 			super.onPreExecute();
 			mResultObject = null;
 			if (mIListener != null) {
-				mIListener.onTask(this, TaskEvent.Before);
+				mIListener.onTask(this, TaskEvent.Before,null);
 			}
 		}
 
@@ -148,7 +148,7 @@ public class TTask {
 				return;
 			super.onPostExecute(result);
 			if (mIListener != null) {
-				mIListener.onTask(this, TaskEvent.Cancel, result);
+				mIListener.onTask(this, TaskEvent.Cancel);
 			}
 			if (mErrorString != null && !mErrorString.equals(""))
 				Log.i(TAG, this.getTaskId() + mErrorString);
@@ -179,7 +179,7 @@ public class TTask {
 			mTask.publishProgress(values);
 		}
 
-		public ArrayList<String> getParameter() {
+		public ArrayList<Object> getParameter() {
 			return mParameters;
 		}
 

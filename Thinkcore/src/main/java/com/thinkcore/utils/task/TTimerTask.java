@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TTimerTask {
-	private TITimerListen mITimerListen;
+	private TITimerListener mITimerListen;
 	private long mDelayMs;
 	private Timer mTimer;
 	private TimerTask mTimerTask;
@@ -16,10 +16,10 @@ public class TTimerTask {
 	 * 
 	 * @param delayMs
 	 *            延时
-	 * @param processor
+	 * @param listen
 	 *            定时处理器，由调用者定制实现
 	 */
-	public TTimerTask(int delayMs, TITimerListen listen) {
+	public TTimerTask(int delayMs, TITimerListener listen) {
 		mITimerListen = listen;
 		mDelayMs = delayMs;
 		mThis = this;
@@ -68,7 +68,7 @@ public class TTimerTask {
 		return isStarted;
 	}
 
-	public interface TITimerListen {
+	public interface TITimerListener {
 		public abstract void onTimerListen(TTimerTask task);
 	}
 }

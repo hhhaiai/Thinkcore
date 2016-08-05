@@ -197,7 +197,7 @@ public class TLog {
 	}
 
 	private static void printLoger(int priority, String tag, String message) {
-		if (!TApplication.isRelease()) {
+		if (TApplication.isApkDebugable()) {
 			printLoger(mDefaultLogger, priority, tag, message);
 			Iterator<Entry<String, TILogger>> iter = mLoggerHashMap.entrySet()
 					.iterator();

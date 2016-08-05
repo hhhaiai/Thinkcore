@@ -1,10 +1,6 @@
 package com.thinkcore.activity;
 
 import java.util.Stack;
-
-import com.thinkcore.activity.layoutloader.TILayoutLoader;
-import com.thinkcore.activity.layoutloader.TLayoutLoader;
-
 import android.app.Activity;
 
 //程序管理
@@ -13,11 +9,6 @@ public class TActivityManager {
 	private static TActivityManager mThis;
 
 	protected TActivity mCurrentActivity; // 当前activity
-
-	/** 获取布局文件ID加载器 */
-	protected TILayoutLoader mLayoutLoader;
-	/** 加载类注入器 */
-	protected TInjector mInjector;
 
 	private TActivityManager() {
 	}
@@ -103,24 +94,6 @@ public class TActivityManager {
 		mActivityStack.clear();
 	}
 
-	// 返回
-	public void back() {
-		// if (mActivityStackInfo != null && mActivityStackInfo.size() != 0) {
-		// if (mActivityStackInfo.size() >= 2) {
-		// mActivityStackInfo.pop();
-		// }
-		//
-		// mCurrentNavigationDirection = NavigationDirection.Backward;
-		// ActivityStackInfo info = mActivityStackInfo.peek();
-		// try {
-		// TCommandExecutor.getInstance().enqueueCommand(
-		// info.getCommandKey(), info.getRequest(), this);
-		// } catch (TNoSuchCommandException e) {
-		// e.printStackTrace();
-		// }
-		// }
-	}
-
 	/**
 	 * 结束指定类名的Activity
 	 */
@@ -131,27 +104,5 @@ public class TActivityManager {
 			}
 		}
 		return false;
-	}
-
-	public TILayoutLoader getLayoutLoader() { // 布局加载
-		if (mLayoutLoader == null) {
-			mLayoutLoader = TLayoutLoader.getInstance();
-		}
-		return mLayoutLoader;
-	}
-
-	public void setLayoutLoader(TILayoutLoader layoutLoader) { // 设置布局加载
-		mLayoutLoader = layoutLoader;
-	}
-
-	public TInjector getInjector() { // 注入
-		if (mInjector == null) {
-			mInjector = TInjector.getInstance();
-		}
-		return mInjector;
-	}
-
-	public void setInjector(TInjector injector) { // 设置注入
-		this.mInjector = injector;
 	}
 }
