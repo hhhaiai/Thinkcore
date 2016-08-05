@@ -9,7 +9,7 @@ import org.acra.ReportingInteractionMode;
 import org.acra.annotation.ReportsCrashes;
 
 @ReportsCrashes(
-        mailTo = "banketree@163.com",
+        formUri = "banketree@163.com",
         mode = ReportingInteractionMode.DIALOG,
         customReportContent = {ReportField.APP_VERSION_NAME, ReportField.ANDROID_VERSION, ReportField.PHONE_MODEL, ReportField.CUSTOM_DATA, ReportField.BRAND, ReportField.STACK_TRACE, ReportField.LOGCAT, ReportField.USER_COMMENT},
         resToastText = R.string.app_test, // optional, displayed as soon as the crash occurs, before collecting data which can take a few seconds
