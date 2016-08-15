@@ -2,17 +2,10 @@ package com.thinkcore;
 
 import java.util.List;
 
-import com.thinkcore.crash.TCrash;
-import com.thinkcore.crash.TICrashListener;
 import com.thinkcore.utils.config.TPreferenceConfig;
 import com.thinkcore.utils.config.TPropertiesConfig;
-import com.thinkcore.utils.log.TLog;
-import com.thinkcore.utils.network.TINetChangeListener;
+import com.thinkcore.utils.network.INetChangeListener;
 import com.thinkcore.utils.network.TNetWorkUtil.netType;
-import com.thinkcore.utils.task.TITaskListener;
-import com.thinkcore.utils.task.TTask;
-import com.thinkcore.utils.task.TTask.Task;
-import com.thinkcore.utils.task.TTask.TaskEvent;
 
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
@@ -20,47 +13,28 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.app.Application;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 
 //程序app
-public class TApplication extends Application implements TICrashListener,
-		TITaskListener, TINetChangeListener {
+public class TApplication extends Application implements
+		INetChangeListener {
 
 	protected static TApplication mThis = null;
-	private TTask mInitTask = null;
-	private boolean mInit = false;
 
 	@Override
 	public void onCreate() {
 		super.onCreate();
 		mThis = this;
 
-		TCrash.getInstance().setICrashListener(this);
-		TCrash.getInstance().initConfig(this);
-
 		TPropertiesConfig.getInstance().initConfig(this);
 		TPreferenceConfig.getInstance().initConfig(this);
-
-		mInitTask = new TTask();
-		mInitTask.setIXTaskListener(this);
-		mInitTask.startTask(100);
 	}
 
 	@Override
 	public void onTerminate() {
-		if (mInitTask != null)
-			mInitTask.stopTask();
-
-		mInitTask = null;
 		onExitApplication();
 
 		super.onTerminate();
-	}
-
-	@Override
-	public void onAppCrash(String crashFile) {
-
 	}
 
 	@Override
@@ -78,21 +52,8 @@ public class TApplication extends Application implements TICrashListener,
 	}
 
 	protected void onExitApplication() { // 退出app
-		TCrash.getInstance().release();
-
 		TPropertiesConfig.getInstance().release();
 		TPreferenceConfig.getInstance().release();
-	}
-
-	protected void onInitConfigByThread() {
-	}
-
-	public void onInitComplete() {
-
-	}
-
-	public boolean isInitComplete() {
-		return mInit;
 	}
 
 	/**
@@ -104,20 +65,6 @@ public class TApplication extends Application implements TICrashListener,
 	public void appExit(Boolean isBackground) {
 	}
 
-	@Override
-	public void onTask(Task task, TaskEvent event, Object... params) {
-		if (mInitTask != null && mInitTask.equalTask(task)) {
-			try {
-				if (event == TaskEvent.Work) {
-					onInitConfigByThread();
-				} else if (event == TaskEvent.Cancel) {
-					mInit = true;
-					onInitComplete();
-				}
-			} catch (Exception e) {
-			}
-		}
-	}
 
 	public PackageInfo getPackageInfo(int flags) {// getPackageName()是你当前类的包名，0代表是获取版本信息
 		PackageInfo packageInfo = null;
@@ -168,16 +115,6 @@ public class TApplication extends Application implements TICrashListener,
 			if (!topActivity.getPackageName().equals(getPackageName())) {
 				return true;
 			}
-		}
-		return false;
-	}
-
-	public static boolean isApkDebugable() {
-		try {
-			ApplicationInfo info= TApplication.getInstance().getApplicationInfo();
-			return (info.flags&ApplicationInfo.FLAG_DEBUGGABLE)!=0;
-		} catch (Exception e) {
-
 		}
 		return false;
 	}

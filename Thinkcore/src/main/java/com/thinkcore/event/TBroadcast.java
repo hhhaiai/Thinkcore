@@ -18,8 +18,8 @@ import android.os.AsyncTask;
 /**
  * 广播执行者
  */
-public class TBroadcastByProcess {
-	public static String TAG = TBroadcastByProcess.class.getCanonicalName();
+public class TBroadcast {
+	public static String TAG = TBroadcast.class.getCanonicalName();
 	public static final String INTENT_ACTION_EVENT = TAG
 			+ ".INTENT_ACTION_EVENT";
 	public static final String MAINEVENT = "mainevent";
@@ -148,16 +148,16 @@ public class TBroadcastByProcess {
 			return;
 		mBroadcastParametersProcess.clear(); // Broadcast固定参数
 		mBroadcastParametersProcess.add(intent
-				.getStringExtra(TBroadcastByProcess.MESSAGE0));
+				.getStringExtra(TBroadcast.MESSAGE0));
 		mBroadcastParametersProcess.add(intent
-				.getStringExtra(TBroadcastByProcess.MESSAGE1));
+				.getStringExtra(TBroadcast.MESSAGE1));
 		mBroadcastParametersProcess.add(intent
-				.getStringExtra(TBroadcastByProcess.MESSAGE2));
+				.getStringExtra(TBroadcast.MESSAGE2));
 		mBroadcastParametersProcess.add(intent
-				.getStringExtra(TBroadcastByProcess.MESSAGE3));
+				.getStringExtra(TBroadcast.MESSAGE3));
 		mBroadcastParametersProcess.add(intent
-				.getStringExtra(TBroadcastByProcess.MESSAGE4));
+				.getStringExtra(TBroadcast.MESSAGE4));
 		mBroadcastParametersProcess.add(intent
-				.getStringExtra(TBroadcastByProcess.MESSAGE5));
+				.getStringExtra(TBroadcast.MESSAGE5));
 	}
 }

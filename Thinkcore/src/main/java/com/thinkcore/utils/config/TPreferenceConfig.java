@@ -18,7 +18,6 @@ package com.thinkcore.utils.config;
 import java.lang.reflect.Field;
 import java.util.Map;
 
-import com.thinkcore.TIGlobalInterface;
 import com.thinkcore.utils.TReflecterUtils;
 
 import android.content.Context;
@@ -28,7 +27,7 @@ import android.content.SharedPreferences.Editor;
 /**
  * @Android的Preference类型配置文件操作类
  */
-public class TPreferenceConfig implements TIConfig, TIGlobalInterface {
+public class TPreferenceConfig implements TIConfig{
 	private Context mContext;
 	private Editor edit = null;
 	private SharedPreferences mSharedPreferences;
@@ -44,20 +43,10 @@ public class TPreferenceConfig implements TIConfig, TIGlobalInterface {
 		loadConfig();
 	}
 
-	@Override
-	public void initConfig() {
-
-	}
-
-	@Override
-	public void release() {
-
-	}
 
 	/**
 	 * 获得系统资源类
-	 * 
-	 * @param context
+	 *
 	 * @return
 	 */
 	public static TPreferenceConfig getInstance() {

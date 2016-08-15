@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.util.UUID;
 
-import com.thinkcore.crash.TCrash;
 import com.thinkcore.utils.log.TLog;
 
 import android.content.Context;

@@ -2,6 +2,7 @@ package com.thinkcore.activity;
 
 import java.util.ArrayList;
 
+import com.thinkcore.TApplication;
 import com.thinkcore.dialog.TDialogManager;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
@@ -30,7 +31,7 @@ public abstract class TActivity extends Activity implements TITaskListener {
 
 	protected Context mContext;
 	protected TTask mActivityTask;
-	private Status mStatus;
+	protected Status mStatus;
 	protected ArrayList<String> mActivityParameters = new ArrayList<String>();
 
 	@Override
@@ -141,7 +142,7 @@ public abstract class TActivity extends Activity implements TITaskListener {
 		return mActivityParameters;
 	}
 
-	public Status get_status() {
+	public Status getStatus() {
 		return mStatus;
 	}
 
@@ -152,5 +153,9 @@ public abstract class TActivity extends Activity implements TITaskListener {
 
 	protected void makeText(String content) {
 		TToastUtils.makeText(mContext, content);
+	}
+
+	public static String getResString(int id) {
+		return TApplication.getInstance().getString(id);
 	}
 }

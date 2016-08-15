@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.thinkcore.TApplication;
 import com.thinkcore.dialog.TDialogManager;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
@@ -30,7 +31,7 @@ public abstract class TAppActivity extends AppCompatActivity implements TITaskLi
 
 	protected Context mContext;
 	protected TTask mActivityTask;
-	private Status mStatus;
+	protected Status mStatus;
 	protected ArrayList<String> mActivityParameters = new ArrayList<String>();
 
 	@Override
@@ -141,7 +142,7 @@ public abstract class TAppActivity extends AppCompatActivity implements TITaskLi
 		return mActivityParameters;
 	}
 
-	public Status get_status() {
+	public Status getStatus() {
 		return mStatus;
 	}
 
@@ -152,5 +153,9 @@ public abstract class TAppActivity extends AppCompatActivity implements TITaskLi
 
 	protected void makeText(String content) {
 		TToastUtils.makeText(mContext, content);
+	}
+
+	public static String getResString(int id) {
+		return TApplication.getInstance().getString(id);
 	}
 }

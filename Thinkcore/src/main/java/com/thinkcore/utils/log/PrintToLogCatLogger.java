@@ -5,7 +5,7 @@ import com.thinkcore.utils.TStringUtils;
 import android.util.Log;
 
 //打印到LogCat上面的日志类
-public class PrintToLogCatLogger implements TILogger {
+public class PrintToLogCatLogger implements ILogger {
 	@Override
 	public void d(String tag, String message) {
 		if (TStringUtils.isEmpty(tag) || TStringUtils.isEmpty(message))

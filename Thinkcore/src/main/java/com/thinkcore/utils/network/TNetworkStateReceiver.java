@@ -17,7 +17,6 @@ package com.thinkcore.utils.network;
 
 import java.util.ArrayList;
 
-import com.thinkcore.TIGlobalInterface;
 import com.thinkcore.utils.log.TLog;
 import com.thinkcore.utils.network.TNetWorkUtil.netType;
 
@@ -29,11 +28,10 @@ import android.content.IntentFilter;
 /**
  * @Title 监听网络广播
  */
-public class TNetworkStateReceiver extends BroadcastReceiver implements
-		TIGlobalInterface {
+public class TNetworkStateReceiver extends BroadcastReceiver  {
 	private static Boolean mNetworkAvailable = false;
 	private static netType mNetType;
-	private static ArrayList<TINetChangeListener> mNetChangeObserverArrayList = new ArrayList<TINetChangeListener>();
+	private static ArrayList<INetChangeListener> mNetChangeObserverArrayList = new ArrayList<INetChangeListener>();
 	private final static String ANDROID_NET_CHANGE_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
 	public final static String TA_ANDROID_NET_CHANGE_ACTION = "think.android.net.conn.CONNECTIVITY_CHANGE";
 	private static TNetworkStateReceiver mThis;
@@ -51,11 +49,6 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 		registerNetworkStateReceiver();
 	}
 
-	@Override
-	public void initConfig() {
-	}
-
-	@Override
 	public void release() {
 		unRegisterNetworkStateReceiver();
 	}
@@ -81,7 +74,6 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 	/**
 	 * 注册网络状态广播
 	 * 
-	 * @param mContext
 	 */
 	private void registerNetworkStateReceiver() {
 		IntentFilter filter = new IntentFilter();
@@ -94,7 +86,6 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 	/**
 	 * 检查网络状态
 	 * 
-	 * @param mContext
 	 */
 	public void checkNetworkState() {
 		Intent intent = new Intent();
@@ -105,7 +96,6 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 	/**
 	 * 注销网络状态广播
 	 * 
-	 * @param mContext
 	 */
 	private void unRegisterNetworkStateReceiver() {
 		try {
@@ -130,7 +120,7 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 
 	private void notifyObserver() {
 		for (int i = 0; i < mNetChangeObserverArrayList.size(); i++) {
-			TINetChangeListener observer = mNetChangeObserverArrayList.get(i);
+			INetChangeListener observer = mNetChangeObserverArrayList.get(i);
 			if (observer != null) {
 				if (isNetworkAvailable()) {
 					observer.onConnect(mNetType);
@@ -145,12 +135,11 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 	/**
 	 * 注册网络连接观察者
 	 * 
-	 * @param observerKey
-	 *            observerKey
+	 * @param observer
 	 */
-	public static void registerObserver(TINetChangeListener observer) {
+	public static void registerObserver(INetChangeListener observer) {
 		if (mNetChangeObserverArrayList == null) {
-			mNetChangeObserverArrayList = new ArrayList<TINetChangeListener>();
+			mNetChangeObserverArrayList = new ArrayList<INetChangeListener>();
 		}
 		mNetChangeObserverArrayList.add(observer);
 	}
@@ -158,10 +147,9 @@ public class TNetworkStateReceiver extends BroadcastReceiver implements
 	/**
 	 * 注销网络连接观察者
 	 * 
-	 * @param resID
-	 *            observerKey
+	 * @param observer
 	 */
-	public void removeRegisterObserver(TINetChangeListener observer) {
+	public void removeRegisterObserver(INetChangeListener observer) {
 		if (mNetChangeObserverArrayList != null) {
 			mNetChangeObserverArrayList.remove(observer);
 		}

@@ -1,6 +1,6 @@
 package com.thinkcore.utils.log;
 
-public interface TILogger {
+interface ILogger {
 	void v(String tag, String message);
 
 	void d(String tag, String message);

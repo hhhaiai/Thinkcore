@@ -9,7 +9,7 @@ import com.thinkcore.storage.TStorageUtils;
 import com.thinkcore.utils.TStringUtils;
 
 //打印到sdcard上面的日志类
-public class PrintToFileLogger implements TILogger {
+public class PrintToFileLogger implements ILogger {
 	public static final int VERBOSE = 2;
 	public static final int DEBUG = 3;
 	public static final int INFO = 4;

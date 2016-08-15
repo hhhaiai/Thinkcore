@@ -2,11 +2,9 @@ package com.thinkcore.utils.log;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 import java.util.Map.Entry;
 
 import com.thinkcore.TApplication;
-import com.thinkcore.utils.TStringUtils;
 
 //日志打印类
 public class TLog {
@@ -46,8 +44,8 @@ public class TLog {
 	 * Priority constant for the println method.
 	 */
 	public static final int ASSERT = 7;
-	private static HashMap<String, TILogger> mLoggerHashMap = new HashMap<String, TILogger>();
-	private static TILogger mDefaultLogger = new PrintToLogCatLogger();
+	private static HashMap<String, ILogger> mLoggerHashMap = new HashMap<String, ILogger>();
+	private static ILogger mDefaultLogger = new PrintToLogCatLogger();
 	private static HashMap<String, Boolean> mIgnoreTagHashMap = new HashMap<String, Boolean>();
 
 	public static void enablePrintToFileLogger(boolean enable) {
@@ -63,7 +61,7 @@ public class TLog {
 		mDefaultLogger.close();
 	}
 
-	public static void addLogger(TILogger logger) {
+	public static void addLogger(ILogger logger) {
 		String loggerName = logger.getClass().getName();
 		String defaultLoggerName = mDefaultLogger.getClass().getName();
 		if (!mLoggerHashMap.containsKey(loggerName)
@@ -73,7 +71,7 @@ public class TLog {
 		}
 	}
 
-	public static void removeLogger(TILogger logger) {
+	public static void removeLogger(ILogger logger) {
 		String loggerName = logger.getClass().getName();
 		if (mLoggerHashMap.containsKey(loggerName)) {
 			logger.close();
@@ -197,22 +195,20 @@ public class TLog {
 	}
 
 	private static void printLoger(int priority, String tag, String message) {
-		if (TApplication.isApkDebugable()) {
 			printLoger(mDefaultLogger, priority, tag, message);
-			Iterator<Entry<String, TILogger>> iter = mLoggerHashMap.entrySet()
+			Iterator<Entry<String, ILogger>> iter = mLoggerHashMap.entrySet()
 					.iterator();
 			while (iter.hasNext()) {
-				Entry<String, TILogger> entry = iter.next();
-				TILogger logger = entry.getValue();
+				Entry<String, ILogger> entry = iter.next();
+				ILogger logger = entry.getValue();
 				if (logger != null) {
 					printLoger(logger, priority, tag, message);
 				}
 			}
-		}
 	}
 
-	private static void printLoger(TILogger logger, int priority, String tag,
-			String message) {
+	private static void printLoger(ILogger logger, int priority, String tag,
+								   String message) {
 		if (!mIgnoreTagHashMap.isEmpty() && mIgnoreTagHashMap.containsKey(tag)) {
 			return;
 		}

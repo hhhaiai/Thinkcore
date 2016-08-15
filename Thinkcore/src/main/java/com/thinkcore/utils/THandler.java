@@ -35,4 +35,9 @@ public abstract class THandler<T> extends Handler { // 弱引用
 	public T getOwner() {
 		return mOwner.get();
 	}
+
+
+	public interface IHandler {
+		void handleMessage(Message msg);
+	}
 }

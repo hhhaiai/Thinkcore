@@ -7,7 +7,6 @@ import java.lang.reflect.Field;
 import java.util.Enumeration;
 import java.util.Properties;
 
-import com.thinkcore.TIGlobalInterface;
 import com.thinkcore.utils.TReflecterUtils;
 import com.thinkcore.utils.log.TLog;
 
@@ -16,7 +15,7 @@ import android.content.Context;
 /**
  * @Android的Properties类型配置文件操作类
  */
-public class TPropertiesConfig implements TIConfig, TIGlobalInterface {
+public class TPropertiesConfig implements TIConfig {
 	/** assets中配置信息文件 */
 	private String mAssetsPath = "/assets/config.properties";
 	/** 软件Files文件夹中配置信息文件 */
@@ -33,16 +32,6 @@ public class TPropertiesConfig implements TIConfig, TIGlobalInterface {
 	public void initConfig(Context context) {
 		this.mContext = context;
 		loadConfig();
-	}
-
-	@Override
-	public void initConfig() {
-
-	}
-
-	@Override
-	public void release() {
-
 	}
 
 	/**

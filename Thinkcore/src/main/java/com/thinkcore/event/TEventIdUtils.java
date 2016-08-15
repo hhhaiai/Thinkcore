@@ -1,8 +1,6 @@
 package com.thinkcore.event;
 
 public class TEventIdUtils {
-	public final static boolean Debug_Or_Release_App = true; // true调式、false发布版
-
 	private static int indexEvent = 0;
 	// 核心事件
 	private final static int CoreEvent = getNextEvent(); // 跳转

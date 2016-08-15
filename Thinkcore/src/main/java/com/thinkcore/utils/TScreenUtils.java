@@ -4,12 +4,10 @@ import java.lang.reflect.Field;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Display;
 import android.view.WindowManager;
 
 import com.thinkcore.TApplication;
-import com.thinkcore.crash.TCrash;
 import com.thinkcore.utils.log.TLog;
 
 public class TScreenUtils {
@@ -80,8 +78,7 @@ public class TScreenUtils {
 
 	/**
 	 * ５40 的分辨率上是85 （
-	 * 
-	 * @param width
+	 *
 	 *            　当前屏幕宽度
 	 * @return
 	 */

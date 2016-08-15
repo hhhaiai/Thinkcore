@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012-2016 Markus Junginger, greenrobot (http://greenrobot.org)
+ * Copyright (C) 2013  WhiteCat 白猫 (www.thinkandroid.cn)
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.greenrobot.eventbus.meta;
+package com.thinkcore.utils.network;
 
-import org.greenrobot.eventbus.SubscriberMethod;
+import com.thinkcore.utils.network.TNetWorkUtil.netType;
 
-/** Base class for generated index classes created by annotation processing. */
-public interface SubscriberInfo {
-    Class<?> getSubscriberClass();
+/**
+ * @Title TANetChangeObserver
+ */
+public interface INetChangeListener {
+	/**
+	 * 网络连接连接时调用
+	 */
+	public void onConnect(netType type);
 
-    SubscriberMethod[] getSubscriberMethods();
-
-    SubscriberInfo getSuperSubscriberInfo();
-
-    boolean shouldCheckSuperclass();
+	/**
+	 * 当前没有网络连接
+	 */
+	public void onDisConnect();
 }
