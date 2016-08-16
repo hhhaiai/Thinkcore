@@ -2,20 +2,18 @@ package com.thinkcore.activity;
 
 import com.thinkcore.TApplication;
 import com.thinkcore.event.TEvent;
-import com.thinkcore.utils.THandler;
+import com.thinkcore.utils.TEventBus;
 
 import android.app.Activity;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
+import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 
 public class TFragment extends Fragment {
 	protected View mThis;
@@ -23,7 +21,7 @@ public class TFragment extends Fragment {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {// 当Activity中的onCreate方法执行完后调用
 		super.onCreate(savedInstanceState);
-		EventBus.getDefault().register(this);
+		TEventBus.getDefault().register(this);
 	}
 
 	@Override
@@ -79,7 +77,7 @@ public class TFragment extends Fragment {
 		super.onDetach();
 	}
 
-	@Subscribe(threadMode = ThreadMode.MAIN)
+	@Subscribe(threadMode = ThreadMode.MainThread)
 	public void processEvent(TEvent event) {
 	}
 

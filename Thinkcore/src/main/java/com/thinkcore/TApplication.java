@@ -52,8 +52,6 @@ public class TApplication extends Application implements
 	}
 
 	protected void onExitApplication() { // 退出app
-		TPropertiesConfig.getInstance().release();
-		TPreferenceConfig.getInstance().release();
 	}
 
 	/**

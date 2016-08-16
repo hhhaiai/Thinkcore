@@ -6,23 +6,19 @@ import com.thinkcore.TApplication;
 import com.thinkcore.dialog.TDialogManager;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
+import com.thinkcore.utils.TEventBus;
 import com.thinkcore.utils.TToastUtils;
-import com.thinkcore.utils.task.TITaskListener;
-import com.thinkcore.utils.task.TTask;
-import com.thinkcore.utils.task.TTask.Task;
-import com.thinkcore.utils.task.TTask.TaskEvent;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 
 //界面
-public abstract class TActivity extends Activity implements TITaskListener {
+public abstract class TActivity extends Activity {
 	private String TAG = TActivity.class.getCanonicalName();
 
 	public enum Status {
@@ -30,7 +26,6 @@ public abstract class TActivity extends Activity implements TITaskListener {
 	}
 
 	protected Context mContext;
-	protected TTask mActivityTask;
 	protected Status mStatus;
 	protected ArrayList<String> mActivityParameters = new ArrayList<String>();
 
@@ -43,7 +38,7 @@ public abstract class TActivity extends Activity implements TITaskListener {
 		initActivityParameter(getIntent());
 		TActivityManager.getInstance().addActivity(this);// 添加activity
 
-		EventBus.getDefault().register(this);
+		TEventBus.getDefault().register(this);
 	}
 
 
@@ -87,37 +82,16 @@ public abstract class TActivity extends Activity implements TITaskListener {
 			mActivityParameters.clear();
 		mActivityParameters = null;
 
-		stopTask();
-		mActivityTask = null;
-
 		mStatus = Status.DESTORYED;
 
 		mContext = null;
 
-		EventBus.getDefault().unregister(this);
+		TEventBus.getDefault().unregister(this);
 		super.onDestroy();
 	}
 
-	@Override
-	public void onTask(Task task, TaskEvent event, Object... params) {
-	}
-
-	@Subscribe(threadMode = ThreadMode.MAIN)
+	@Subscribe(threadMode = ThreadMode.MainThread)
 	public void processEvent(TEvent event) {
-	}
-
-	protected void startTask(int taskID, Object... params) {
-		if (mActivityTask == null) {
-			mActivityTask = new TTask();
-			mActivityTask.setIXTaskListener(this);
-		}
-
-		mActivityTask.startTask(taskID, params);
-	}
-
-	protected void stopTask() {
-		if (mActivityTask != null)
-			mActivityTask.stopTask();
 	}
 
 	private void initActivityParameter(Intent intent) {

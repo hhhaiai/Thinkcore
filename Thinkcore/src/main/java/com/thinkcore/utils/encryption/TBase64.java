@@ -562,9 +562,9 @@ public class TBase64 {
 		encoder.output = new byte[output_len];
 		encoder.process(input, offset, len, true);
 
-		if (TApplication.isApkDebugable() && encoder.op != output_len) {
-			throw new AssertionError();
-		}
+//		if (encoder.op != output_len) {
+//			throw new AssertionError();
+//		}
 
 		return encoder.output;
 	}
@@ -748,9 +748,9 @@ public class TBase64 {
 					output[op++] = '\n';
 				}
 
-				if (TApplication.isApkDebugable() && (tailLen != 0 || p != len)) {
-					throw new AssertionError();
-				}
+//				if ((tailLen != 0 || p != len)) {
+//					throw new AssertionError();
+//				}
 			} else {
 				// Save the leftovers in tail to be consumed on the next
 				// call to encodeInternal.
