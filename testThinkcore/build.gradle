@@ -16,11 +16,11 @@ android {
     //签名
     signingConfigs {
         debug {
-            storeFile file("E:/coding-android/android-key/debug.keystore")
+//            storeFile file("E:/coding-android/android-key/debug.keystore")
         }
         relealse {
             //这样写就得把demo.jk文件放在项目目录
-            storeFile file("E:/coding-android/android-key/keydroid.keystore")
+//            storeFile file("E:/coding-android/android-key/keydroid.keystore")
             storePassword "0416456a"
             keyAlias "android"
             keyPassword "0416456a"
