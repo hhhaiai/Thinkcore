@@ -14,9 +14,6 @@ import com.thinkcore.utils.TToastUtils;
 
 import java.util.ArrayList;
 
-import de.greenrobot.event.Subscribe;
-import de.greenrobot.event.ThreadMode;
-
 //界面
 public abstract class TAppActivity extends AppCompatActivity  {
 	private String TAG = TAppActivity.class.getCanonicalName();
@@ -38,8 +35,6 @@ public abstract class TAppActivity extends AppCompatActivity  {
 		initActivityParameter(getIntent());
 
 		TActivityManager.getInstance().addActivity(this);// 添加activity
-
-		TEventBus.getDefault().register(this);
 	}
 
 
@@ -85,16 +80,8 @@ public abstract class TAppActivity extends AppCompatActivity  {
 		mStatus = Status.DESTORYED;
 
 		mContext = null;
-
-		TEventBus.getDefault().unregister(this);
 		super.onDestroy();
 	}
-
-
-	@Subscribe(threadMode = ThreadMode.MainThread)
-	public void processEvent(TEvent event) {
-	}
-
 
 	private void initActivityParameter(Intent intent) {
 		if (mActivityParameters == null)

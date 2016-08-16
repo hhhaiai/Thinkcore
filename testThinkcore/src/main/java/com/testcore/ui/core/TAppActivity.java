@@ -1,23 +1,26 @@
-package com.thinkcore.activity;
+package com.testcore.ui.core;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.thinkcore.TApplication;
+import com.thinkcore.activity.TActivityManager;
 import com.thinkcore.dialog.TDialogManager;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
 import com.thinkcore.utils.TEventBus;
 import com.thinkcore.utils.TToastUtils;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
+import java.util.ArrayList;
 
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 
 //界面
-public abstract class TActivity extends Activity {
-	private String TAG = TActivity.class.getCanonicalName();
+public abstract class TAppActivity extends AppCompatActivity  {
+	private String TAG = TAppActivity.class.getCanonicalName();
 
 	public enum Status {
 		NONE, CREATED, STARTED, RESUMED, PAUSED, STOPPED, DESTORYED
@@ -34,7 +37,10 @@ public abstract class TActivity extends Activity {
 		mStatus = Status.CREATED;
 
 		initActivityParameter(getIntent());
+
 		TActivityManager.getInstance().addActivity(this);// 添加activity
+
+		TEventBus.getDefault().register(this);
 	}
 
 
@@ -69,7 +75,6 @@ public abstract class TActivity extends Activity {
 
 	@Override
 	protected void onDestroy() {
-
 		TActivityManager.getInstance().removeActivity(this);
 
 		TDialogManager.hideProgressDialog(this);
@@ -81,8 +86,16 @@ public abstract class TActivity extends Activity {
 		mStatus = Status.DESTORYED;
 
 		mContext = null;
+
+		TEventBus.getDefault().unregister(this);
 		super.onDestroy();
 	}
+
+
+	@Subscribe(threadMode = ThreadMode.MainThread)
+	public void processEvent(TEvent event) {
+	}
+
 
 	private void initActivityParameter(Intent intent) {
 		if (mActivityParameters == null)

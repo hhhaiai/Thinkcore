@@ -1,18 +1,19 @@
-package com.thinkcore.activity;
+package com.testcore.ui.core;
 
-import java.util.ArrayList;
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 
 import com.thinkcore.TApplication;
+import com.thinkcore.activity.TActivityManager;
 import com.thinkcore.dialog.TDialogManager;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
 import com.thinkcore.utils.TEventBus;
 import com.thinkcore.utils.TToastUtils;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
+import java.util.ArrayList;
 
 
 //界面
@@ -35,6 +36,7 @@ public abstract class TActivity extends Activity {
 
 		initActivityParameter(getIntent());
 		TActivityManager.getInstance().addActivity(this);// 添加activity
+
 	}
 
 
@@ -81,7 +83,13 @@ public abstract class TActivity extends Activity {
 		mStatus = Status.DESTORYED;
 
 		mContext = null;
+
+		TEventBus.getDefault().unregister(this);
 		super.onDestroy();
+	}
+
+	@Subscribe(threadMode = ThreadMode.MainThread)
+	public void processEvent(TEvent event) {
 	}
 
 	private void initActivityParameter(Intent intent) {
