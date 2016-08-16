@@ -1,4 +1,4 @@
-package com.thinkcore.utils;
+package com.thinkcore.eventbus;
 
 
 import android.os.AsyncTask;
@@ -21,6 +21,9 @@ public class TEventBus extends EventBus{
 		return defaultInstance;
 	}
 
+	/*
+	* 扩展方法，增加时间延长
+	* */
 	public void post(final Object event, final int second) {
 		new AsyncTask<String, Integer, Boolean>() {
 

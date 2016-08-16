@@ -9,7 +9,6 @@ import com.thinkcore.TApplication;
 import com.thinkcore.dialog.TDialogManager;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.utils.TActivityUtils;
-import com.thinkcore.utils.TEventBus;
 import com.thinkcore.utils.TToastUtils;
 
 import java.util.ArrayList;

@@ -1,21 +1,19 @@
-package com.testcore.ui.core;
+package com.thinkcore.ui;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.thinkcore.TApplication;
+import com.thinkcore.activity.TFragment;
 import com.thinkcore.event.TEvent;
-import com.thinkcore.utils.TEventBus;
+import com.thinkcore.eventbus.TEventBus;
 
-import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
 
-public class TFragment extends Fragment {
+public class CoreFragment extends TFragment {
 	protected View mThis;
 
 	@Override
@@ -33,7 +31,6 @@ public class TFragment extends Fragment {
 	@Override
 	public void onAttach(Activity activity) { // onCreate之前触发（Fragment和Activity建立关联的时候调用）
 		super.onAttach(activity);
-
 	}
 
 	@Override
@@ -69,7 +66,7 @@ public class TFragment extends Fragment {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-		EventBus.getDefault().unregister(this);
+		TEventBus.getDefault().unregister(this);
 	}
 
 	@Override
@@ -79,9 +76,5 @@ public class TFragment extends Fragment {
 
 	@Subscribe(threadMode = ThreadMode.MainThread)
 	public void processEvent(TEvent event) {
-	}
-
-	public static String getResString(int id) {
-		return TApplication.getInstance().getString(id);
 	}
 }

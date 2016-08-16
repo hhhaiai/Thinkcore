@@ -14,10 +14,12 @@ public class TestTActivity extends TAppActivity implements OnClickListener {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		try {
-			setContentView(R.layout.ac_home);
+			setContentView(R.layout.activity_test);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
+
+		findViewById(R.id.Button_crash).setOnClickListener(this);
 
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
@@ -45,9 +47,9 @@ public class TestTActivity extends TAppActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-//		if (testComparatorButton == arg0) {
-//			Log.i("", "");
-//			UIBroadcast.sentEvent(mContext, 1001, 1002, "");
-//		}
+		if(arg0.getId() == R.id.Button_crash)
+		{
+			int test = 10/0;
+		}
 	}
 }

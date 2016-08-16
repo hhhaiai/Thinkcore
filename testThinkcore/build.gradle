@@ -58,4 +58,6 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':Thinkcore')
+    compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'ch.acra:acra:4.9.0'
 }

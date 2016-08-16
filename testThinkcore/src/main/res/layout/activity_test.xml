@@ -15,43 +15,40 @@
 			android:gravity="center"
 			android:paddingBottom="10dip"
 			android:paddingTop="20dip"
-			android:text="label_examples"
+			android:text="测试"
 			android:textSize="24sp" />
 
 		<Button
+			android:id="@+id/Button_crash"
 			android:layout_width="320dp"
 			android:layout_height="wrap_content"
+			android:text="测试奔溃"
 			android:layout_marginLeft="10dip"
-			android:layout_marginRight="10dip"
-			android:onClick="onImageListClick" />
+			android:layout_marginRight="10dip" />
 
 		<Button
 			android:layout_width="320dp"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
-			android:layout_marginRight="10dip"
-			android:onClick="onImageGridClick" />
+			android:layout_marginRight="10dip" />
 
 		<Button
 			android:layout_width="320dp"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
-			android:layout_marginRight="10dip"
-			android:onClick="onImagePagerClick" />
+			android:layout_marginRight="10dip" />
 
 		<Button
 			android:layout_width="320dp"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
-			android:layout_marginRight="10dip"
-			android:onClick="onImageGalleryClick" />
+			android:layout_marginRight="10dip" />
 
 		<Button
 			android:layout_width="320dp"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
-			android:layout_marginRight="10dip"
-			android:onClick="onFragmentsClick" />
+			android:layout_marginRight="10dip" />
 	</LinearLayout>
 
 </ScrollView>
