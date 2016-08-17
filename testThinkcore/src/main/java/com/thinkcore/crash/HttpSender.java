@@ -46,6 +46,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+
 import static org.acra.ACRA.LOG_TAG;
 
 
@@ -61,8 +66,21 @@ public class HttpSender implements ReportSender {
     @Override
     public void send(@NonNull Context context, @NonNull CrashReportData report) throws ReportSenderException {
         try{
-            TLog.i(this,"test111111111111111111111111111111111111111111111111111111");
-            TToastUtils.makeText(report.toJSON().toString());
+            OkHttpClient client = new OkHttpClient();
+            RequestBody formBody = new FormBody.Builder().add("content", report.toJSON().toString()).build();
+            Request request = new Request.Builder().url(mUrlString).post(formBody).build();
+            client.newCall(request).enqueue(new okhttp3.Callback() {
+                @Override
+                public void onFailure(okhttp3.Call call, IOException e) {
+                }
+
+                @Override
+                public void onResponse(okhttp3.Call call, okhttp3.Response response) throws IOException {
+                    // 注：该回调是子线程，非主线程
+                    TLog.i("","callback thread id is "+Thread.currentThread().getId());
+                }
+            });
+
             Thread.sleep(2000);
         }catch (Exception e)
         {

@@ -58,6 +58,15 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':Thinkcore')
+    //事件分发
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    //异常拦截
     compile 'ch.acra:acra:4.9.0'
+    //okhttp 网络请求
+    compile 'com.squareup.okhttp3:okhttp:3.0.1'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
+    //RxJava
+    compile 'io.reactivex:rxjava:1.1.0'
+    compile 'io.reactivex:rxandroid:1.1.0'
+
 }

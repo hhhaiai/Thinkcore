@@ -27,7 +27,9 @@
 			android:layout_marginRight="10dip" />
 
 		<Button
+			android:id="@+id/Button_http"
 			android:layout_width="320dp"
+			android:text="测试Okhttp3"
 			android:layout_height="wrap_content"
 			android:layout_marginLeft="10dip"
 			android:layout_marginRight="10dip" />

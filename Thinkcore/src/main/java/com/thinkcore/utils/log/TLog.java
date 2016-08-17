@@ -191,7 +191,7 @@ public class TLog {
 			tag = Tag;
 		}
 
-		printLoger(priority, tag, String.format(message, args));
+		printLoger(priority, tag, (args==null||args.length==0)?message:String.format(message, args));
 	}
 
 	private static void printLoger(int priority, String tag, String message) {

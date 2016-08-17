@@ -2,11 +2,14 @@ package com.testcore.ui;
 
 import com.testcore.R;
 import com.thinkcore.activity.TAppActivity;
+import com.thinkcore.ui.CoreAppActivity;
+import com.thinkcore.utils.TActivityUtils;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 
-public class TestTActivity extends TAppActivity implements OnClickListener {
+public class TestTActivity extends CoreAppActivity implements OnClickListener {
 	private String TAG = TestTActivity.class.getCanonicalName();
 
 	@Override
@@ -20,6 +23,8 @@ public class TestTActivity extends TAppActivity implements OnClickListener {
 		}
 
 		findViewById(R.id.Button_crash).setOnClickListener(this);
+		findViewById(R.id.Button_http).setOnClickListener(this);
+
 
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
@@ -47,9 +52,10 @@ public class TestTActivity extends TAppActivity implements OnClickListener {
 
 	@Override
 	public void onClick(View arg0) {
-		if(arg0.getId() == R.id.Button_crash)
-		{
+		if(arg0.getId() == R.id.Button_crash){
 			int test = 10/0;
+		}else if(arg0.getId() == R.id.Button_http){
+			TActivityUtils.jumpToActivity(this,HttpActivity.class);
 		}
 	}
 }

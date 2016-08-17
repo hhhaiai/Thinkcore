@@ -1,8 +1,8 @@
 package com.thinkcore.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
+import com.thinkcore.activity.TAppActivity;
 import com.thinkcore.event.TEvent;
 import com.thinkcore.eventbus.TEventBus;
 
@@ -10,7 +10,7 @@ import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
 
 //界面
-public abstract class CoreAppActivity extends AppCompatActivity  {
+public abstract class CoreAppActivity extends TAppActivity {
 	private String TAG = CoreAppActivity.class.getCanonicalName();
 
 
