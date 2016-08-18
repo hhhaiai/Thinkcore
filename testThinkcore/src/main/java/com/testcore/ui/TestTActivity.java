@@ -1,7 +1,6 @@
 package com.testcore.ui;
 
 import com.testcore.R;
-import com.thinkcore.activity.TAppActivity;
 import com.thinkcore.ui.CoreAppActivity;
 import com.thinkcore.utils.TActivityUtils;
 
@@ -24,8 +23,8 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 
 		findViewById(R.id.Button_crash).setOnClickListener(this);
 		findViewById(R.id.Button_http).setOnClickListener(this);
-
-
+		findViewById(R.id.Button_download).setOnClickListener(this);
+		findViewById(R.id.Button_dialog).setOnClickListener(this);
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
 //		// 渐变展示启动�?
@@ -56,6 +55,10 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			int test = 10/0;
 		}else if(arg0.getId() == R.id.Button_http){
 			TActivityUtils.jumpToActivity(this,HttpActivity.class);
+		}else if(arg0.getId() == R.id.Button_download){
+			TActivityUtils.jumpToActivity(this,DownloadActivity.class);
+		}else if(arg0.getId() == R.id.Button_dialog){
+			TActivityUtils.jumpToActivity(this,DialogActivity.class);
 		}
 	}
 }

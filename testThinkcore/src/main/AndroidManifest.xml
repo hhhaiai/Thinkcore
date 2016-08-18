@@ -64,6 +64,15 @@
         <activity
             android:name=".ui.HttpActivity"
             android:label="@string/app_name">
+
+        </activity>
+        <activity
+            android:name=".ui.DownloadActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.DialogActivity"
+            android:label="@string/app_name">
         </activity>
 
         <activity

@@ -68,5 +68,9 @@ dependencies {
     //RxJava
     compile 'io.reactivex:rxjava:1.1.0'
     compile 'io.reactivex:rxandroid:1.1.0'
-
+    //download 下载库
+    compile 'com.github.banketree:Android-Download:1.0.0'
+    //对话框
+    compile 'com.afollestad.material-dialogs:core:0.9.0.1'
+    compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
 }
