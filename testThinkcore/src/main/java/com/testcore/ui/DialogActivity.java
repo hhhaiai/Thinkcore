@@ -100,8 +100,19 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
         accentPreselect = DialogUtils.resolveColor(this, R.attr.colorAccent);
 
         findViewById(R.id.basicNoTitle).setOnClickListener(this);
-
-
+        findViewById(R.id.basic).setOnClickListener(this);
+        findViewById(R.id.basicLongContent).setOnClickListener(this);
+        findViewById(R.id.basicIcon).setOnClickListener(this);
+        findViewById(R.id.basicCheckPrompt).setOnClickListener(this);
+        findViewById(R.id.stacked).setOnClickListener(this);
+        findViewById(R.id.neutral).setOnClickListener(this);
+        findViewById(R.id.callbacks).setOnClickListener(this);
+        findViewById(R.id.list).setOnClickListener(this);
+        findViewById(R.id.listNoTitle).setOnClickListener(this);
+        findViewById(R.id.longList).setOnClickListener(this);
+        findViewById(R.id.list_longItems).setOnClickListener(this);
+        findViewById(R.id.list_checkPrompt).setOnClickListener(this);
+        findViewById(R.id.list_longPress).setOnClickListener(this);
     }
 
     @Override
@@ -117,13 +128,16 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
             mThread.interrupt();
     }
 
+    boolean theme = false;
     @Override
     public void onClick(View v) {
+        theme = !theme;
         if(v.getId()==R.id.basicNoTitle){
             new MaterialDialog.Builder(this)
                     .content(R.string.shareLocationPrompt)
                     .positiveText(R.string.agree)
                     .negativeText(R.string.disagree)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.basic) {
             new MaterialDialog.Builder(this)
@@ -131,6 +145,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                     .content(R.string.useGoogleLocationServicesPrompt)
                     .positiveText(R.string.agree)
                     .negativeText(R.string.disagree)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.basicLongContent) {
             new MaterialDialog.Builder(this)
@@ -138,6 +153,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                     .content(R.string.loremIpsum)
                     .positiveText(R.string.agree)
                     .negativeText(R.string.disagree)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.basicIcon) {
             new MaterialDialog.Builder(this)
@@ -147,6 +163,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                     .content(R.string.useGoogleLocationServicesPrompt)
                     .positiveText(R.string.agree)
                     .negativeText(R.string.disagree)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.basicCheckPrompt) {
             new MaterialDialog.Builder(this)
@@ -162,6 +179,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                         }
                     })
                     .checkBoxPromptRes(R.string.dont_ask_again, false, null)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.stacked) {
             new MaterialDialog.Builder(this)
@@ -171,6 +189,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                     .negativeText(R.string.noThanks)
                     .btnStackedGravity(GravityEnum.END)
                     .stackingBehavior(StackingBehavior.ALWAYS)  // this generally should not be forced, but is used for demo purposes
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.neutral) {
             new MaterialDialog.Builder(this)
@@ -179,6 +198,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                     .positiveText(R.string.agree)
                     .negativeText(R.string.disagree)
                     .neutralText(R.string.more_info)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.callbacks) {
             new MaterialDialog.Builder(this)
@@ -187,6 +207,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                     .positiveText(R.string.agree)
                     .negativeText(R.string.disagree)
                     .neutralText(R.string.more_info)
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .onAny(new MaterialDialog.SingleButtonCallback() {
                         @Override
                         public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -204,6 +225,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                             showToast(which + ": " + text);
                         }
                     })
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.listNoTitle) {
             new MaterialDialog.Builder(this)
@@ -214,6 +236,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                             showToast(which + ": " + text);
                         }
                     })
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.longList) {
             new MaterialDialog.Builder(this)
@@ -225,6 +248,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                             showToast(which + ": " + text);
                         }
                     })
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .positiveText(android.R.string.cancel)
                     .show();
         }else if(v.getId()==R.id.list_longItems) {
@@ -237,6 +261,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                             showToast(which + ": " + text);
                         }
                     })
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .show();
         }else if(v.getId()==R.id.list_checkPrompt) {
             new MaterialDialog.Builder(this)
@@ -248,6 +273,7 @@ public class DialogActivity extends CoreAppActivity implements View.OnClickListe
                             showToast(which + ": " + text);
                         }
                     })
+                    .theme(theme==true?Theme.DARK:Theme.LIGHT)
                     .checkBoxPromptRes(R.string.example_prompt, true, null)
                     .negativeText(android.R.string.cancel)
                     .show();

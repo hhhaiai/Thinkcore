@@ -51,8 +51,10 @@
 			android:layout_marginRight="10dip" />
 
 		<Button
+			android:id="@+id/Button_theme"
 			android:layout_width="320dp"
 			android:layout_height="wrap_content"
+			android:text="测试主题"
 			android:layout_marginLeft="10dip"
 			android:layout_marginRight="10dip" />
 	</LinearLayout>

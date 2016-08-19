@@ -10,10 +10,12 @@ import android.view.View.OnClickListener;
 
 public class TestTActivity extends CoreAppActivity implements OnClickListener {
 	private String TAG = TestTActivity.class.getCanonicalName();
-
+	private static boolean mTheme = false;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
+		setTheme(mTheme ? R.style.AppThemeLight : R.style.AppThemeDark);
+
 		super.onCreate(savedInstanceState);
 		try {
 			setContentView(R.layout.activity_test);
@@ -25,6 +27,7 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 		findViewById(R.id.Button_http).setOnClickListener(this);
 		findViewById(R.id.Button_download).setOnClickListener(this);
 		findViewById(R.id.Button_dialog).setOnClickListener(this);
+		findViewById(R.id.Button_theme).setOnClickListener(this);
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
 //		// 渐变展示启动�?
@@ -59,6 +62,9 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			TActivityUtils.jumpToActivity(this,DownloadActivity.class);
 		}else if(arg0.getId() == R.id.Button_dialog){
 			TActivityUtils.jumpToActivity(this,DialogActivity.class);
+		}else if(arg0.getId() == R.id.Button_theme){
+			mTheme = !mTheme;
+			recreate();
 		}
 	}
 }

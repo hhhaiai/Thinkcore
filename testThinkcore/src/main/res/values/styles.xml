@@ -1,11 +1,35 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+    <!-- App Theme Light -->
+    <style name="BaseAppThemeLight" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_accent</item>
+        <item name="colorPrimaryDark">@color/color_accent</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="android:textColorPrimary">@color/color_accent</item>
+        <item name="android:listDivider">@color/list_divider_light</item>
+        <item name="test123">@color/list_divider_light</item>
+    </style>
+
+    <style name="AppThemeLight" parent="BaseAppThemeLight" />
+
+    <style name="AppThemeLight.FitsStatusBar" />
+
+    <!-- App Theme Dark -->
+    <style name="BaseAppThemeDark" parent="Theme.AppCompat.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/list_divider_dark</item>
+        <item name="colorPrimaryDark">@color/list_divider_dark</item>
+        <item name="colorAccent">@color/list_divider_dark</item>
+        <item name="android:textColorPrimary">@color/blue_light</item>
+        <item name="android:listDivider">@color/list_divider_dark</item>
+    </style>
+
+    <style name="AppThemeDark" parent="BaseAppThemeDark" />
+
+    <style name="AppThemeDark.FitsStatusBar" />
+
+    <!-- App Theme Launch -->
+    <style name="AppThemeLaunch" parent="BaseAppThemeLight">
+        <item name="android:windowBackground">@color/color_primary</item>
     </style>
 
     <style name="SampleHeader">
@@ -15,8 +39,7 @@
         <item name="android:textColor">?android:textColorPrimary</item>
         <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
         <item name="android:layout_marginLeft">@dimen/headerMarginStart</item>
-        <item name="android:layout_marginStart" tools:ignore="NewApi">@dimen/headerMarginStart
-        </item>
+        <item name="android:layout_marginStart" tools:ignore="NewApi">@dimen/headerMarginStart</item>
         <item name="android:layout_marginTop">@dimen/headerMarginVertical</item>
         <item name="android:layout_marginBottom">@dimen/headerMarginVertical</item>
     </style>

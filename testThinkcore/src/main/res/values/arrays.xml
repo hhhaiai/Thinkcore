@@ -17,4 +17,6 @@
         <item>#2196F3</item>
     </array>
 
+    <attr name="test123" format="color|reference" />
+
 </resources>
