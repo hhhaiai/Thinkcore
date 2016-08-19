@@ -1,6 +1,7 @@
 package com.testcore.ui;
 
 import com.testcore.R;
+import com.testcore.utils.ThemeUtils;
 import com.thinkcore.ui.CoreAppActivity;
 import com.thinkcore.utils.TActivityUtils;
 
@@ -64,7 +65,8 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			TActivityUtils.jumpToActivity(this,DialogActivity.class);
 		}else if(arg0.getId() == R.id.Button_theme){
 			mTheme = !mTheme;
-			recreate();
+
+			ThemeUtils.recreateActivity(this);
 		}
 	}
 }

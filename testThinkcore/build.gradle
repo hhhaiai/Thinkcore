@@ -7,51 +7,51 @@ android {
 
     defaultConfig {
         applicationId "com.testcore"
-        minSdkVersion 16
+        minSdkVersion 8
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
 
     //签名
-    signingConfigs {
-        debug {
-//            storeFile file("E:/coding-android/android-key/debug.keystore")
-        }
-        relealse {
-            //这样写就得把demo.jk文件放在项目目录
-//            storeFile file("E:/coding-android/android-key/keydroid.keystore")
-            storePassword "0416456a"
-            keyAlias "android"
-            keyPassword "0416456a"
-        }
-    }
+//    signingConfigs {
+//        debug {
+////            storeFile file("E:/coding-android/android-key/debug.keystore")
+//        }
+//        relealse {
+//            //这样写就得把demo.jk文件放在项目目录
+////            storeFile file("E:/coding-android/android-key/keydroid.keystore")
+//            storePassword "0416456a"
+//            keyAlias "android"
+//            keyPassword "0416456a"
+//        }
+//    }
 
-    buildTypes {
-        debug{
-            // 显示Log
-            buildConfigField "boolean", "LOG_DEBUG", "true"
-            versionNameSuffix "-debug"
-            minifyEnabled false
-            zipAlignEnabled false
-            shrinkResources false
-            signingConfig signingConfigs.debug
-        }
+//    buildTypes {
+//        debug{
+//            // 显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "true"
+//            versionNameSuffix "-debug"
+//            minifyEnabled false
+//            zipAlignEnabled false
+//            shrinkResources false
+////            signingConfig signingConfigs.debug
+//        }
+//
+//        release {
+//            // 不显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", "false"
+//            minifyEnabled true
+//            zipAlignEnabled true
+//            shrinkResources true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+////            signingConfig signingConfigs.relealse
+//        }
+//    }
 
-        release {
-            // 不显示Log
-            buildConfigField "boolean", "LOG_DEBUG", "false"
-            minifyEnabled true
-            zipAlignEnabled true
-            shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.relealse
-        }
-    }
-
-    lintOptions{
-        checkReleaseBuilds true
-    }
+//    lintOptions{
+//        checkReleaseBuilds true
+//    }
 }
 
 dependencies {
