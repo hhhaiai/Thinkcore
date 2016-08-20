@@ -132,5 +132,141 @@
         <attr name="hover2" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="Theme">
+        <attr name="discreteSeekBarStyle" format="reference"/>
+    </declare-styleable>
+    <declare-styleable name="DiscreteSeekBar">
+        <attr name="dsb_min" format="integer|dimension"/>
+        <attr name="dsb_max" format="integer|dimension"/>
+        <attr name="dsb_value" format="integer|dimension"/>
+        <attr name="dsb_mirrorForRtl" format="boolean"/>
+        <attr name="dsb_allowTrackClickToDrag" format="boolean"/>
+        <attr name="dsb_progressColor" format="color|reference"/>
+        <attr name="dsb_trackColor" format="color|reference"/>
+        <attr name="dsb_indicatorTextAppearance" format="reference"/>
+        <attr name="dsb_indicatorColor" format="color|reference"/>
+        <attr name="dsb_indicatorElevation" format="dimension"/>
+        <attr name="dsb_indicatorFormatter" format="string|reference"/>
+        <attr name="dsb_rippleColor" format="color|reference"/>
+        <attr name="dsb_indicatorPopupEnabled" format="boolean"/>
+        <attr name="dsb_trackHeight" format="integer|dimension"/>
+        <attr name="dsb_scrubberHeight" format="integer|dimension"/>
+        <attr name="dsb_thumbSize" format="integer|dimension"/>
+        <attr name="dsb_indicatorSeparation" format="integer|dimension"/>
+    </declare-styleable>
 
+    <declare-styleable name="CustomAttributes">
+
+        <!-- Color of ripple animation -->
+        <attr name="rippleColor3" format="color|reference" />
+        <!-- Speed of ripple animation -->
+        <attr name="rippleSpeed3" format="float" />
+        <!-- indicate if the slider must show number indicator -->
+        <attr name="showNumberIndicator" format="boolean" />
+        <!-- in progress view indicate max value of progress -->
+        <attr name="max" format="integer" />
+        <!-- in progress view indicate min value of progress -->
+        <attr name="min" format="integer" />
+        <!-- in progress view indicate value of progress -->
+        <attr name="value" format="integer" />
+        <!-- in progress view indicate value of progress -->
+        <attr name="progress" format="integer" />
+        <attr name="ringWidth3" format="dimension" />
+        <!-- in switche's view indicate state of view -->
+        <attr name="check" format="boolean" />
+        <attr name="checkBoxSize" format="dimension" />
+        <attr name="thumbSize" format="dimension" />
+        <!-- in float button indicate icon resource -->
+        <attr name="iconDrawable" format="integer" />
+        <!-- in button whitch contains drawable indicate icon resource -->
+        <attr name="iconSize" format="dimension" />
+        <!-- in float button indicate if must start with animation -->
+        <attr name="animate" format="boolean" />
+        <!-- set the border of the ripple frame -->
+        <attr name="rippleBorderRadius3" format="float" />
+        <!-- if true, delays calls to OnClickListeners until ripple effect ends -->
+        <attr name="clickAfterRipple" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionButton">
+        <attr name="fab_colorNormal" format="color" />
+        <attr name="fab_colorPressed" format="color" />
+        <attr name="fab_colorDisabled" format="color" />
+        <attr name="fab_colorRipple" format="color" />
+        <attr name="fab_showShadow" format="boolean" />
+        <attr name="fab_shadowColor" format="color" />
+        <attr name="fab_shadowRadius" format="dimension" />
+        <attr name="fab_shadowXOffset" format="dimension" />
+        <attr name="fab_shadowYOffset" format="dimension" />
+        <attr name="fab_size" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="mini" value="1" />
+        </attr>
+        <attr name="fab_showAnimation" format="reference" />
+        <attr name="fab_hideAnimation" format="reference" />
+        <attr name="fab_label" format="string" />
+        <attr name="fab_elevationCompat" format="dimension" />
+        <attr name="fab_progress_color" format="color" />
+        <attr name="fab_progress_backgroundColor" format="color" />
+        <attr name="fab_progress_indeterminate" format="boolean" />
+        <attr name="fab_progress_max" format="integer" />
+        <attr name="fab_progress" format="integer" />
+        <attr name="fab_progress_showBackground" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="FloatingActionMenu">
+        <attr name="menu_showShadow" format="boolean" />
+        <attr name="menu_buttonSpacing" format="dimension" />
+        <attr name="menu_labels_margin" format="dimension" />
+        <attr name="menu_labels_showAnimation" format="reference" />
+        <attr name="menu_labels_hideAnimation" format="reference" />
+        <attr name="menu_labels_paddingTop" format="dimension" />
+        <attr name="menu_labels_paddingLeft" format="dimension" />
+        <attr name="menu_labels_paddingRight" format="dimension" />
+        <attr name="menu_labels_paddingBottom" format="dimension" />
+        <attr name="menu_labels_padding" format="dimension" />
+        <attr name="menu_labels_textColor" format="reference|color" />
+        <attr name="menu_labels_textSize" format="dimension" />
+        <attr name="menu_labels_cornerRadius" format="dimension" />
+        <attr name="menu_labels_showShadow" format="boolean" />
+        <attr name="menu_labels_colorNormal" format="color" />
+        <attr name="menu_labels_colorPressed" format="color" />
+        <attr name="menu_labels_colorRipple" format="color" />
+        <attr name="menu_labels_position" format="enum">
+            <enum name="left" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+        <attr name="menu_icon" format="reference" />
+        <attr name="menu_animationDelayPerItem" format="integer" />
+        <attr name="menu_buttonToggleAnimation" format="reference" />
+        <attr name="menu_labels_singleLine" format="boolean" />
+        <attr name="menu_labels_ellipsize" format="enum">
+            <enum name="none" value="0" />
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+            <enum name="marquee" value="4" />
+        </attr>
+        <attr name="menu_labels_maxLines" format="integer" />
+        <attr name="menu_fab_size" format="enum">
+            <enum name="normal" value="0" />
+            <enum name="mini" value="1" />
+        </attr>
+        <attr name="menu_labels_style" format="reference" />
+        <attr name="menu_shadowColor" format="color" />
+        <attr name="menu_shadowRadius" format="dimension" />
+        <attr name="menu_shadowXOffset" format="dimension" />
+        <attr name="menu_shadowYOffset" format="dimension" />
+        <attr name="menu_colorNormal" format="color" />
+        <attr name="menu_colorPressed" format="color" />
+        <attr name="menu_colorRipple" format="color" />
+        <attr name="menu_openDirection" format="enum">
+            <enum name="up" value="0" />
+            <enum name="down" value="1" />
+        </attr>
+        <attr name="menu_backgroundColor" format="color" />
+        <attr name="menu_fab_label" format="string" />
+        <attr name="menu_fab_show_animation" format="reference" />
+        <attr name="menu_fab_hide_animation" format="reference" />
+    </declare-styleable>
 </resources>

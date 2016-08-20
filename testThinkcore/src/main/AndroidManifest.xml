@@ -138,7 +138,55 @@
             android:label="@string/app_name">
         </activity>
 
+        <activity
+            android:name=".ui.DiscreteseekbarActivity"
+            android:label="@string/app_name">
+        </activity>
 
+        <activity
+            android:name=".ui.materialdesigndemo.ButtonsActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.materialdesigndemo.MainActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.materialdesigndemo.ProgressActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.materialdesigndemo.SwitchActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.materialdesigndemo.WidgetActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.fd.MainActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.fd.RecyclerViewActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.fd.FloatingMenusActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.rangebarsample.MainActivity"
+            android:label="@string/app_name">
+        </activity>
         <activity
             android:name="org.acra.dialog.CrashReportDialog"
             android:theme="@android:style/Theme.Dialog"

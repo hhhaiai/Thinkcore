@@ -21,9 +21,8 @@ public class SwipyRefreshActivity extends AppCompatActivity implements SwipyRefr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_swipyrefresh);
-
-        initLayout();
+            setContentView(R.layout.activity_swipyrefresh);
+            initLayout();
     }
 
     private void initLayout() {

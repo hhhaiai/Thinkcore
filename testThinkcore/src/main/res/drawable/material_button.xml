@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- pressed state -->
+    <item android:state_pressed="true">
+        <inset xmlns:android="http://schemas.android.com/apk/res/android"
+               android:insetLeft="3dp"
+               android:insetTop="3dp"
+               android:insetRight="3dp"
+               android:insetBottom="3dp">
+            <shape android:shape="rectangle">
+                <corners android:radius="3dp"/>
+                <solid android:color="@color/accent"/>
+                <padding android:left="3dp"
+                         android:top="3dp"
+                         android:right="3dp"
+                         android:bottom="3dp"/>
+            </shape>
+        </inset>
+    </item>
+
+    <!-- focused state -->
+    <item android:state_focused="true">
+        <inset xmlns:android="http://schemas.android.com/apk/res/android"
+               android:insetLeft="3dp"
+               android:insetTop="3dp"
+               android:insetRight="3dp"
+               android:insetBottom="3dp">
+            <shape android:shape="rectangle">
+                <corners android:radius="3dp"/>
+                <solid android:color="@color/accent"/>
+                <padding android:left="3dp"
+                         android:top="3dp"
+                         android:right="3dp"
+                         android:bottom="3dp"/>
+            </shape>
+        </inset>
+    </item>
+
+    <!-- normal state -->
+    <item>
+        <inset xmlns:android="http://schemas.android.com/apk/res/android">
+            <shape android:shape="rectangle">
+                <corners android:radius="3dp"/>
+                <!--<solid android:color="@color/NORMAL_STATE_COLOR" />-->
+                <padding android:left="3dp"
+                         android:top="3dp"
+                         android:right="3dp"
+                         android:bottom="3dp"/>
+            </shape>
+        </inset>
+    </item>
+</selector>

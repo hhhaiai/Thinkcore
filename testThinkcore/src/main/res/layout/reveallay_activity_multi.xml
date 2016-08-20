@@ -1,4 +1,4 @@
-<me.yugy.github.reveallayout.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.testcore.ui.reveallayout.RevealLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -36,4 +36,4 @@
         android:textColor="#FFF"
         />
 
-</me.yugy.github.reveallayout.RevealLayout>
+</com.testcore.ui.reveallayout.RevealLayout>

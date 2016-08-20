@@ -64,4 +64,9 @@
 
     <!-- 背景阴影颜色 -->
     <color name="rfab__color_shadow">#c6c6c6</color>
+
+    <color name="green">#00FF00</color>
+    <color name="thumbColor">#66aaaaaa</color>
+
+    <color name="accent_color">#FF22A4D4</color>
 </resources>

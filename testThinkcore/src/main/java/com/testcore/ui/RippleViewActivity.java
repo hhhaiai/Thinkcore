@@ -17,10 +17,10 @@ public class RippleViewActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ripple_view);
+            setContentView(R.layout.activity_ripple_view);
         mButton = (RippleView2) findViewById(R.id.btn);
         mButton.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				Toast.makeText(getApplicationContext(), "Ripples Yo! :D", Toast.LENGTH_LONG).show();

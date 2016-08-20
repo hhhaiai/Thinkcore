@@ -39,7 +39,8 @@
         <item name="android:textColor">?android:textColorPrimary</item>
         <item name="android:fontFamily" tools:ignore="NewApi">sans-serif-light</item>
         <item name="android:layout_marginLeft">@dimen/headerMarginStart</item>
-        <item name="android:layout_marginStart" tools:ignore="NewApi">@dimen/headerMarginStart</item>
+        <item name="android:layout_marginStart" tools:ignore="NewApi">@dimen/headerMarginStart
+        </item>
         <item name="android:layout_marginTop">@dimen/headerMarginVertical</item>
         <item name="android:layout_marginBottom">@dimen/headerMarginVertical</item>
     </style>
@@ -55,7 +56,6 @@
         <item name="kswThumbWidth">@dimen/ksw_md_thumb_ripple_size</item>
         <item name="kswThumbHeight">@dimen/ksw_md_thumb_ripple_size</item>
     </style>
-
 
 
     <style name="StyleTitleText">
@@ -122,29 +122,160 @@
     </style>
 
     <declare-styleable name="RapidFloatingActionLayout">
-        <attr name="rfal_frame_color" format="color"/>
-        <attr name="rfal_frame_alpha" format="float"/>
+        <attr name="rfal_frame_color" format="color" />
+        <attr name="rfal_frame_alpha" format="float" />
     </declare-styleable>
 
     <declare-styleable name="RapidFloatingActionButton">
         <attr name="rfab_size" format="enum">
             <!-- 56dp -->
-            <enum name="normal" value="0"/>
+            <enum name="normal" value="0" />
             <!-- 40dp -->
-            <enum name="mini" value="1"/>
+            <enum name="mini" value="1" />
         </attr>
-        <attr name="rfab_drawable" format="reference"/>
-        <attr name="rfab_color_normal" format="color"/>
-        <attr name="rfab_color_pressed" format="color"/>
-        <attr name="rfab_shadow_radius" format="dimension"/>
-        <attr name="rfab_shadow_color" format="color"/>
-        <attr name="rfab_shadow_dx" format="dimension"/>
-        <attr name="rfab_shadow_dy" format="dimension"/>
+        <attr name="rfab_drawable" format="reference" />
+        <attr name="rfab_color_normal" format="color" />
+        <attr name="rfab_color_pressed" format="color" />
+        <attr name="rfab_shadow_radius" format="dimension" />
+        <attr name="rfab_shadow_color" format="color" />
+        <attr name="rfab_shadow_dx" format="dimension" />
+        <attr name="rfab_shadow_dy" format="dimension" />
         <!-- identificationCode用于确定唯一个RFAB，目前用在通过RapidFloatingActionButtonGroup中获取某一个RFAB -->
-        <attr name="rfab_identification_code" format="string"/>
+        <attr name="rfab_identification_code" format="string" />
     </declare-styleable>
 
 
+    <color name="dsb_progress_color">#ff009688</color>
+    <color name="dsb_track_color">#ff939393</color>
+    <color name="dsb_disabled_color">#66939393</color>
+    <color name="dsb_ripple_color_pressed">#77939393</color>
+    <color name="dsb_ripple_color_focused">#99999999</color>
 
+    <style name="Widget.DiscreteSeekBar" parent="android:Widget">
+        <item name="dsb_indicatorTextAppearance">@style/Widget.DiscreteIndicatorTextAppearance
+        </item>
+        <item name="dsb_progressColor">@color/dsb_progress_color_list</item>
+        <item name="dsb_trackColor">@color/dsb_track_color_list</item>
+        <item name="dsb_rippleColor">@color/dsb_ripple_color_list</item>
+        <item name="dsb_indicatorColor">@color/dsb_progress_color</item>
+        <item name="dsb_indicatorElevation">4dp</item>
+        <item name="dsb_mirrorForRtl">true</item>
+    </style>
+
+    <style name="Widget.DiscreteIndicatorTextAppearance" parent="android:TextAppearance.Small">
+        <item name="android:textColor">?android:attr/textColorPrimaryInverse</item>
+        <item name="android:padding">6dp</item>
+    </style>
+
+    <style name="AppTheme" parent="android:Theme.Light">
+        <!-- Customize your theme here. -->
+    </style>
+
+
+    <style name="CustomFloaterTextAppearance" parent="android:TextAppearance.Small">
+        <item name="android:textSize">9sp</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:shadowColor">#FFFF0000</item>
+        <item name="android:shadowRadius">4</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">3</item>
+    </style>
+
+    <style name="ActionBarStyle" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="MenuLabelsStyle">
+        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="MenuButtonsStyle">
+        <item name="fab_size">mini</item>
+        <item name="fab_showAnimation">@anim/jump_from_down</item>
+        <item name="fab_hideAnimation">@anim/jump_to_down</item>
+        <item name="fab_shadowColor">#444</item>
+        <item name="fab_colorNormal">#FFB805</item>
+        <item name="fab_colorPressed">#F2AB00</item>
+        <item name="fab_colorRipple">#D99200</item>
+    </style>
+
+    <style name="MenuButtonsSmall">
+        <item name="fab_size">mini</item>
+        <item name="fab_colorNormal">#1565C0</item>
+        <item name="fab_colorPressed">#2272CD</item>
+        <item name="fab_colorRipple">#62B2FF</item>
+    </style>
+
+    <style name="MenuButtonsSmall.Green">
+        <item name="fab_colorNormal">#43A047</item>
+        <item name="fab_colorPressed">#2E7D32</item>
+        <item name="fab_colorRipple">#1B5E20</item>
+    </style>
+
+    <style name="AppTheme.Dark" parent="@style/Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">@color/accent_color</item>
+        <item name="android:colorAccent" tools:ignore="NewApi">@color/accent_color</item>
+        <item name="android:listSeparatorTextViewStyle">@style/MPL_PreferenceListHeader</item>
+        <item name="colorPrimary">#FF03A9F4</item>
+        <item name="colorPrimaryDark">#FF0288D1</item>
+    </style>
+
+    <declare-styleable name="RangeBar">
+        <attr name="tickStart" format="float" />
+        <attr name="tickEnd" format="float" />
+        <attr name="tickInterval" format="float" />
+        <attr name="tickHeight" format="dimension" />
+        <attr name="tickColor" format="color" />
+        <attr name="barWeight" format="dimension" />
+        <attr name="rangeBarColor" format="reference|color" />
+        <attr name="textColor" format="reference|color" />
+        <attr name="pinColor" format="reference|color" />
+        <attr name="selectorSize" format="dimension" />
+        <attr name="pinPadding" format="dimension" />
+        <attr name="pinMinFont" format="dimension" />
+        <attr name="pinMaxFont" format="dimension" />
+        <attr name="rangeBarPaddingBottom" format="dimension" />
+        <attr name="selectorColor" format="reference|color" />
+        <attr name="rangeBar" format="boolean" />
+        <attr name="temporaryPins" format="boolean" />
+        <attr name="connectingLineWeight" format="dimension" />
+        <attr name="connectingLineColor" format="reference|color" />
+        <attr name="pinRadius" format="dimension" />
+    </declare-styleable>
+
+
+        <style name="RoboTheme" parent="@android:style/TextAppearance.Medium">
+            <item name="android:layout_width">fill_parent</item>
+            <item name="android:layout_height">wrap_content</item>
+            <item name="android:textColor">@android:color/primary_text_light</item>
+            <item name="android:textSize">12sp</item>
+            <item name="android:gravity">center</item>
+            <item name="android:layout_marginTop">10dp</item>
+        </style>
+
+        <style name="button">
+            <item name="android:layout_gravity">center</item>
+            <item name="android:textColor">@color/accent</item>
+            <item name="android:layout_height">match_parent</item>
+            <item name="android:layout_width">match_parent</item>
+            <item name="android:gravity">center_vertical|center_horizontal</item>
+            <item name="android:textSize">12sp</item>
+            <item name="android:layout_marginLeft">8dp</item>
+            <item name="android:layout_marginRight">8dp</item>
+            <item name="android:textAllCaps">true</item>
+        </style>
+
+        <style name="button_holder">
+            <item name="cardCornerRadius">2dp</item>
+            <item name="cardElevation">6dp</item>
+            <item name="android:layout_width">0dp</item>
+            <item name="android:layout_weight">1</item>
+            <item name="android:layout_height">72dp</item>
+            <item name="android:layout_margin">6dp</item>
+        </style>
 
 </resources>

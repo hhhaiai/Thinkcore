@@ -37,6 +37,12 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 		findViewById(R.id.Button_Snackbar).setOnClickListener(this);
 		findViewById(R.id.Button_RippleView).setOnClickListener(this);
 		findViewById(R.id.Button_reveallayout).setOnClickListener(this);
+		findViewById(R.id.Button_Discreteseekbar).setOnClickListener(this);
+		findViewById(R.id.Button_compent).setOnClickListener(this);
+		findViewById(R.id.Button_fd).setOnClickListener(this);
+		findViewById(R.id.Button_setting).setOnClickListener(this);
+		findViewById(R.id.Button_rangerbar).setOnClickListener(this);
+
 
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
@@ -88,11 +94,18 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			TActivityUtils.jumpToActivity(this,SnackbarActivity.class);
 		}else if(arg0.getId() == R.id.Button_RippleView){
 			TActivityUtils.jumpToActivity(this,RippleViewActivity.class);
-		}else if(arg0.getId() == R.id.Button_RippleView){
+		}else if(arg0.getId() == R.id.Button_reveallayout){
 			TActivityUtils.jumpToActivity(this, com.testcore.ui.reveallayout.MainActivity.class);
+		}else if(arg0.getId() == R.id.Button_Discreteseekbar){
+			TActivityUtils.jumpToActivity(this, DiscreteseekbarActivity.class);
+		}else if(arg0.getId() == R.id.Button_compent){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.materialdesigndemo.MainActivity.class);
+		}else if(arg0.getId() == R.id.Button_fd){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.fd.MainActivity.class);
+		}else if(arg0.getId() == R.id.Button_setting){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.SettingsActivity.class);
+		}else if(arg0.getId() == R.id.Button_rangerbar){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.rangebarsample.MainActivity.class);
 		}
-
-
-
 	}
 }
