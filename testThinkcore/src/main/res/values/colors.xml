@@ -36,4 +36,32 @@
     <color name="button_stroke_solid_pressed">#ffeeeeee</color>
     <color name="button_stroke_solid_accent">#3301ee15</color>
 
+
+    <color name="rippelColor">#0099CC</color>
+
+
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_ripple_checked">#33019285</color>
+
+    <color name="ksw_md_solid_shadow">#33000000</color>
+
+    <color name="ksw_md_solid_normal">#ECECEC</color>
+    <color name="ksw_md_solid_checked">#019285</color>
+    <color name="ksw_md_solid_disable">#FFFFFF</color>
+    <color name="ksw_md_solid_checked_disable">#aaaaaa</color>
+
+    <color name="snack_bar_bg">#323232</color>
+    <color name="snack_bar_action_default">#FFEB3B</color>
+
+    <!-- list类型的文本颜色 -->
+    <color name="rfab__color_text_label_item">#777777</color>
+    <!-- 背景颜色 -->
+    <color name="rfab__color_background_normal">#ffffff</color>
+    <color name="rfab__color_background_pressed">#dddddd</color>
+
+    <!-- RFAL的frame覆盖层颜色 -->
+    <color name="rfab__color_frame">#ffffff</color>
+
+    <!-- 背景阴影颜色 -->
+    <color name="rfab__color_shadow">#c6c6c6</color>
 </resources>

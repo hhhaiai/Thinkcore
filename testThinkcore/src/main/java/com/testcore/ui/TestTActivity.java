@@ -1,6 +1,7 @@
 package com.testcore.ui;
 
 import com.testcore.R;
+import com.testcore.ui.switchButton.MainActivity;
 import com.testcore.utils.ThemeUtils;
 import com.thinkcore.ui.CoreAppActivity;
 import com.thinkcore.utils.TActivityUtils;
@@ -29,6 +30,14 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 		findViewById(R.id.Button_download).setOnClickListener(this);
 		findViewById(R.id.Button_dialog).setOnClickListener(this);
 		findViewById(R.id.Button_theme).setOnClickListener(this);
+		findViewById(R.id.Button_ripple).setOnClickListener(this);
+		findViewById(R.id.Button_BetterSpinner).setOnClickListener(this);
+		findViewById(R.id.Button_Switch).setOnClickListener(this);
+		findViewById(R.id.Button_Refresh).setOnClickListener(this);
+		findViewById(R.id.Button_Snackbar).setOnClickListener(this);
+		findViewById(R.id.Button_RippleView).setOnClickListener(this);
+		findViewById(R.id.Button_reveallayout).setOnClickListener(this);
+
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
 //		// 渐变展示启动�?
@@ -67,6 +76,23 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			mTheme = !mTheme;
 
 			ThemeUtils.recreateActivity(this);
+		}else if(arg0.getId() == R.id.Button_ripple){
+			TActivityUtils.jumpToActivity(this,RippleActivity.class);
+		}else if(arg0.getId() == R.id.Button_BetterSpinner){
+			TActivityUtils.jumpToActivity(this,BetterSpinnerActivity.class);
+		}else if(arg0.getId() == R.id.Button_Switch){
+			TActivityUtils.jumpToActivity(this,MainActivity.class);
+		}else if(arg0.getId() == R.id.Button_Refresh){
+			TActivityUtils.jumpToActivity(this,SwipyRefreshActivity.class);
+		}else if(arg0.getId() == R.id.Button_Snackbar){
+			TActivityUtils.jumpToActivity(this,SnackbarActivity.class);
+		}else if(arg0.getId() == R.id.Button_RippleView){
+			TActivityUtils.jumpToActivity(this,RippleViewActivity.class);
+		}else if(arg0.getId() == R.id.Button_RippleView){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.reveallayout.MainActivity.class);
 		}
+
+
+
 	}
 }

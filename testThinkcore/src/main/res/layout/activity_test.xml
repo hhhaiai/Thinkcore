@@ -57,6 +57,63 @@
 			android:text="测试主题"
 			android:layout_marginLeft="10dip"
 			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_ripple"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试Ripple"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_BetterSpinner"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试BetterSpinner"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_Switch"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试Switch"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_Refresh"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试Refresh"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_Snackbar"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试Snackbar"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_RippleView"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试RippleView"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
+		<Button
+			android:id="@+id/Button_reveallayout"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试reveallayout"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
+
 	</LinearLayout>
 
 </ScrollView>

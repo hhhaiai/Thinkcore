@@ -44,4 +44,107 @@
         <item name="android:layout_marginBottom">@dimen/headerMarginVertical</item>
     </style>
 
+    <style name="SwitchButtonMD">
+        <item name="kswThumbDrawable">@drawable/ksw_md_thumb</item>
+        <item name="kswBackColor">@color/ksw_md_back_color</item>
+        <item name="kswBackMeasureRatio">1.45</item>
+        <item name="kswThumbMarginLeft">-16dp</item>
+        <item name="kswThumbMarginTop">-14dp</item>
+        <item name="kswThumbMarginRight">-16dp</item>
+        <item name="kswThumbMarginBottom">-14dp</item>
+        <item name="kswThumbWidth">@dimen/ksw_md_thumb_ripple_size</item>
+        <item name="kswThumbHeight">@dimen/ksw_md_thumb_ripple_size</item>
+    </style>
+
+
+
+    <style name="StyleTitleText">
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:textColor">#444444</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="SwitchButtonStyleMD" parent="SwitchButtonMD">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="Snack_Bar">
+        <item name="android:background">@color/snack_bar_bg</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:paddingLeft">@dimen/snack_bar_left_right_padding</item>
+        <item name="android:paddingRight">@dimen/snack_bar_left_right_padding</item>
+        <item name="android:paddingTop">@dimen/snack_bar_top_padding</item>
+        <item name="android:paddingBottom">@dimen/snack_bar_bottom_padding</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:minHeight">@dimen/snack_bar_height</item>
+        <item name="android:maxHeight">@dimen/snack_bar_max_height</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="Snack_Bar_Title">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/snack_bar_text_size</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textAppearance">@style/SnackBar.TextAppearance.Regular</item>
+    </style>
+
+    <style name="Snack_Bar_Button" parent="@android:style/Widget.ActionButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:textAppearance">@style/SnackBar.TextAppearance.Medium</item>
+        <item name="android:textSize">@dimen/snack_bar_action_text_size</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+    <style name="SnackBar.TextAppearance.Regular" parent="android:TextAppearance">
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="SnackBar.TextAppearance.Medium" parent="android:TextAppearance">
+        <item name="android:typeface">sans</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <declare-styleable name="RapidFloatingActionLayout">
+        <attr name="rfal_frame_color" format="color"/>
+        <attr name="rfal_frame_alpha" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="RapidFloatingActionButton">
+        <attr name="rfab_size" format="enum">
+            <!-- 56dp -->
+            <enum name="normal" value="0"/>
+            <!-- 40dp -->
+            <enum name="mini" value="1"/>
+        </attr>
+        <attr name="rfab_drawable" format="reference"/>
+        <attr name="rfab_color_normal" format="color"/>
+        <attr name="rfab_color_pressed" format="color"/>
+        <attr name="rfab_shadow_radius" format="dimension"/>
+        <attr name="rfab_shadow_color" format="color"/>
+        <attr name="rfab_shadow_dx" format="dimension"/>
+        <attr name="rfab_shadow_dy" format="dimension"/>
+        <!-- identificationCode用于确定唯一个RFAB，目前用在通过RapidFloatingActionButtonGroup中获取某一个RFAB -->
+        <attr name="rfab_identification_code" format="string"/>
+    </declare-styleable>
+
+
+
+
 </resources>

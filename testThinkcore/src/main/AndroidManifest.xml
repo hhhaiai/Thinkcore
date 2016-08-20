@@ -73,6 +73,71 @@
             android:name=".ui.DialogActivity"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name=".ui.RippleActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.BetterSpinnerActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.switchButton.MainActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.switchButton.RecyclerActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.switchButton.StyleActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.switchButton.StyleInCodeActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.switchButton.UseActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.SwipyRefreshActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.SnackbarActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.RippleViewActivity"
+            android:label="@string/app_name">
+        </activity>
+
+        <activity
+            android:name=".ui.reveallayout.FragmentSampleActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.reveallayout.MainActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.reveallayout.MultiChildActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".ui.reveallayout.SingleChildActivity"
+            android:label="@string/app_name">
+        </activity>
+
 
         <activity
             android:name="org.acra.dialog.CrashReportDialog"
