@@ -81,4 +81,7 @@ dependencies {
     //对话框
     compile 'com.afollestad.material-dialogs:core:0.9.0.1'
     compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
+
+    //rxpermissions
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
 }
