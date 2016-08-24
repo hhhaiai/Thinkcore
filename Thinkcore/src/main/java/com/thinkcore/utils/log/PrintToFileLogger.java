@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.thinkcore.TApplication;
+import com.thinkcore.storage.Storage;
 import com.thinkcore.storage.TFilePath;
 import com.thinkcore.storage.TStorageUtils;
 import com.thinkcore.utils.TStringUtils;
@@ -19,7 +20,8 @@ public class PrintToFileLogger implements ILogger {
 
 	private static final SimpleDateFormat TIMESTAMP_FMT = new SimpleDateFormat(
 			"[yyyy-MM-dd HH:mm:ss] ");
-	private String mNameString = "";
+	private String mNameString = "",mCacheDirName="";
+	private Storage mStorage = null;
 
 	public PrintToFileLogger() {
 		open();
@@ -29,8 +31,16 @@ public class PrintToFileLogger implements ILogger {
 		try {
 			mNameString = getCurrentTimeString() + ".log";
 			TFilePath filePath = new TFilePath();
-			filePath.getExternalStorage().createFile(filePath.getCacheDir(),
-					mNameString, "");
+			boolean result = false;
+			if(TStorageUtils.isExternalStoragePresent()){
+				mStorage = filePath.getExternalStorage();
+			}else{
+				mStorage = filePath.getInternalStorage();
+			}
+
+			mCacheDirName = filePath.getCacheDirName();
+			result = mStorage.createFile(mCacheDirName,mNameString, "");
+			result = true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -136,13 +146,13 @@ public class PrintToFileLogger implements ILogger {
 			return;
 		try {
 			String content = TIMESTAMP_FMT.format(new Date()) + message;
-			TFilePath filePath = new TFilePath();
-			if (!filePath.getExternalStorage().isFileExist(
-					filePath.getCacheDir(), mNameString))
-				filePath.getExternalStorage().createFile(
-						filePath.getCacheDir(), mNameString, "");
-			filePath.getExternalStorage().appendFile(filePath.getCacheDir(),
-					mNameString, content);
+			boolean result = false;
+			if (mStorage != null) {
+				if (mStorage.isFileExist(mCacheDirName, mNameString)) {
+					mStorage.appendFile(mCacheDirName,
+							mNameString, content);
+				}
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

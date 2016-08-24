@@ -2,6 +2,8 @@ package com.testcore;
 
 import com.thinkcore.TApplication;
 import com.thinkcore.crash.HttpReportSenderFactory;
+import com.thinkcore.storage.TFilePath;
+import com.thinkcore.utils.log.TLog;
 
 import org.acra.*;
 import org.acra.annotation.*;
@@ -21,5 +23,27 @@ public class MyApp extends TApplication {
     public void onCreate() {
         super.onCreate();
         ACRA.init(this);
+        TLog.enablePrintToFileLogger(true);
+        TFilePath filePath = new TFilePath();
+        String path = filePath.getInterAppDir();
+        TLog.i(this,path);
+        path = filePath.getExternalAppDir();
+        TLog.i(this,path);
+        path = filePath.getInterImageDir();
+        TLog.i(this,path);
+        path = filePath.getExternalImageDir();
+        TLog.i(this,path);
+        path = filePath.getInterAudioDir();
+        TLog.i(this,path);
+        path = filePath.getExternalAudioDir();
+        TLog.i(this,path);
+        path = filePath.getInterCacheDir();
+        TLog.i(this,path);
+        path = filePath.getExternalCacheDir();
+        TLog.i(this,path);
+        path = filePath.getInterDownloadDir();
+        TLog.i(this,path);
+        path = filePath.getExternalDownloadDir();
+        TLog.i(this,path);
     }
 }

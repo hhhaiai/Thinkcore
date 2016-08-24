@@ -286,9 +286,7 @@ public class HttpActivity extends CoreAppActivity implements View.OnClickListene
 //    }
 
     //http://blog.csdn.net/tangxl2008008/article/details/51730187
-    private void testRxJava()
-    {
-//
+    private void testRxJava() {
         final OkHttpClient client = new OkHttpClient();
         final okhttp3.Request request = new okhttp3.Request.Builder()
                 .url(Html)
@@ -297,8 +295,7 @@ public class HttpActivity extends CoreAppActivity implements View.OnClickListene
             @Override
             public void call(Subscriber<? super String> subscriber) {
                 try {
-                    subscriber.onStart();
-                    //处理请求在IO线程中进行
+                    subscriber.onStart();//处理请求在IO线程中进行
                     final Response response = client.newCall(request).execute();
                     if (null != response.cacheResponse()) {
                         subscriber.onError(new Exception("无数据"));
