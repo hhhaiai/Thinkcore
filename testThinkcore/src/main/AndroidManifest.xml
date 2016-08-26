@@ -199,6 +199,544 @@
             android:name="org.acra.sender.SenderService"
             android:exported="false"
             android:process=":acra" />
+
+
+        <activity
+            android:name=".ui.observablescroll.MainActivity"
+            android:label="@string/title_activity_main">
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.AboutActivity"
+            android:label="@string/title_activity_about" />
+        <activity
+            android:name=".ui.observablescroll.ActionBarControlGridViewActivity"
+            android:label="@string/title_activity_actionbarcontrolgridview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ActionBarControlListViewActivity"
+            android:label="@string/title_activity_actionbarcontrollistview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ActionBarControlRecyclerViewActivity"
+            android:label="@string/title_activity_actionbarcontrolrecyclerview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ActionBarControlScrollViewActivity"
+            android:label="@string/title_activity_actionbarcontrolscrollview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ActionBarControlWebViewActivity"
+            android:label="@string/title_activity_actionbarcontrolwebview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGap2ListViewActivity"
+            android:label="@string/title_activity_fillgaplistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGap2RecyclerViewActivity"
+            android:label="@string/title_activity_fillgaprecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGap2ScrollViewActivity"
+            android:label="@string/title_activity_fillgapscrollview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGap3ListViewActivity"
+            android:label="@string/title_activity_fillgap3listview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGap3RecyclerViewActivity"
+            android:label="@string/title_activity_fillgap3recyclerview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGap3ScrollViewActivity"
+            android:label="@string/title_activity_fillgap3scrollview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGapListViewActivity"
+            android:label="@string/title_activity_fillgaplistview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGapRecyclerViewActivity"
+            android:label="@string/title_activity_fillgaprecyclerview">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FillGapScrollViewActivity"
+            android:label="@string/title_activity_fillgapscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceToolbarScrollViewActivity"
+            android:label="@string/title_activity_flexiblespacetoolbarscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceWithImageGridViewActivity"
+            android:label="@string/title_activity_flexiblespacewithimagegridview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceWithImageScrollViewActivity"
+            android:label="@string/title_activity_flexiblespacewithimagescrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceWithImageRecyclerViewActivity"
+            android:label="@string/title_activity_flexiblespacewithimageRecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceWithImageWithViewPagerTabActivity"
+            android:label="@string/title_activity_flexiblespacewithimagewithviewpagertab"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceWithImageWithViewPagerTab2Activity"
+            android:label="@string/title_activity_flexiblespacewithimagewithviewpagertab2"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceWithImageListViewActivity"
+            android:label="@string/title_activity_flexiblespacewithimagelistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FlexibleSpaceToolbarWebViewActivity"
+            android:label="@string/title_activity_flexiblespacewithwebview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FragmentActionBarControlListViewActivity"
+            android:label="@string/title_activity_fragmentactionbarcontrollistview"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.FragmentTransitionActivity"
+            android:label="@string/title_activity_fragmenttransition"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.HandleTouchGridViewActivity"
+            android:label="@string/title_activity_handletouchgridview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.HandleTouchListViewActivity"
+            android:label="@string/title_activity_handletouchlistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.HandleTouchRecyclerViewActivity"
+            android:label="@string/title_activity_handletouchrecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.HandleTouchScrollViewActivity"
+            android:label="@string/title_activity_handletouchscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.HandleTouchWebViewActivity"
+            android:label="@string/title_activity_handletouchwebview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ParallaxToolbarGridViewActivity"
+            android:label="@string/title_activity_parallaxtoolbargridview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ParallaxToolbarListViewActivity"
+            android:label="@string/title_activity_parallaxtoolbarlistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ParallaxToolbarScrollViewActivity"
+            android:label="@string/title_activity_parallaxtoolbarscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ScrollFromBottomListViewActivity"
+            android:label="@string/title_activity_scrollfrombottomlistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ScrollFromBottomRecyclerViewActivity"
+            android:label="@string/title_activity_scrollfrombottomrecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.SlidingUpGridViewActivity"
+            android:label="@string/title_activity_slidingupgridview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.SlidingUpListViewActivity"
+            android:label="@string/title_activity_slidinguplistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.SlidingUpRecyclerViewActivity"
+            android:label="@string/title_activity_slidinguprecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.SlidingUpScrollViewActivity"
+            android:label="@string/title_activity_slidingupscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.SlidingUpWebViewActivity"
+            android:label="@string/title_activity_slidingupwebview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.StickyHeaderListViewActivity"
+            android:label="@string/title_activity_stickyheaderlistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.StickyHeaderRecyclerViewActivity"
+            android:label="@string/title_activity_stickyheaderrecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.StickyHeaderScrollViewActivity"
+            android:label="@string/title_activity_stickyheaderscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.StickyHeaderWebViewActivity"
+            android:label="@string/title_activity_stickyheaderwebview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ToolbarControlGridViewActivity"
+            android:label="@string/title_activity_toolbarcontrolgridview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ToolbarControlListViewActivity"
+            android:label="@string/title_activity_toolbarcontrollistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ToolbarControlRecyclerViewActivity"
+            android:label="@string/title_activity_toolbarcontrolrecyclerview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ToolbarControlScrollViewActivity"
+            android:label="@string/title_activity_toolbarcontrolscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ToolbarControlWebViewActivity"
+            android:label="@string/title_activity_toolbarcontrolwebview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ViewPagerTab2Activity"
+            android:label="@string/title_activity_viewpagertab2"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ViewPagerTabActivity"
+            android:label="@string/title_activity_viewpagertab"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ViewPagerTabFragmentActivity"
+            android:label="@string/title_activity_viewpagertabfragment"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ViewPagerTabListViewActivity"
+            android:label="@string/title_activity_viewpagertablistview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ViewPagerTabScrollViewActivity"
+            android:label="@string/title_activity_viewpagertabscrollview"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.observablescroll.ViewPagerTabScrollViewWithFabActivity"
+            android:label="@string/title_activity_viewpagertabscrollviewwithfab"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="com.github.ksoichiro.android.observablescrollview.samples" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

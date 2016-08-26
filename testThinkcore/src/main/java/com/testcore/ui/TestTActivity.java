@@ -42,7 +42,7 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 		findViewById(R.id.Button_fd).setOnClickListener(this);
 		findViewById(R.id.Button_setting).setOnClickListener(this);
 		findViewById(R.id.Button_rangerbar).setOnClickListener(this);
-
+		findViewById(R.id.Button_scroolview).setOnClickListener(this);
 
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
@@ -106,6 +106,8 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			TActivityUtils.jumpToActivity(this, com.testcore.ui.SettingsActivity.class);
 		}else if(arg0.getId() == R.id.Button_rangerbar){
 			TActivityUtils.jumpToActivity(this, com.testcore.ui.rangebarsample.MainActivity.class);
+		}else if(arg0.getId() == R.id.Button_scroolview){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.observablescroll.ViewPagerTabActivity.class);
 		}
 	}
 }

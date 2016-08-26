@@ -69,4 +69,8 @@
     <color name="thumbColor">#66aaaaaa</color>
 
     <color name="accent_color">#FF22A4D4</color>
+
+    <color name="accentLight">#F4FF81</color>
+
+
 </resources>

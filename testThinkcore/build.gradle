@@ -84,4 +84,6 @@ dependencies {
 
     //rxpermissions
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+
+    compile 'com.github.ksoichiro:Android-ObservableScrollView:v1.6.0'
 }
