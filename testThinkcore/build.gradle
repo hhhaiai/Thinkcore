@@ -4,15 +4,18 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
     useLibrary 'org.apache.http.legacy'
-
     defaultConfig {
         applicationId "com.testcore"
         minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
-    }
 
+        ndk {
+            moduleName "test"         //生成的so名字
+            abiFilters "armeabi", "armeabi-v7a", "x86"  //输出指定三种abi体系结构下的so库。目前可有可无。
+        }
+    }
     //签名
 //    signingConfigs {
 //        debug {
@@ -26,7 +29,6 @@ android {
 //            keyPassword "0416456a"
 //        }
 //    }
-
 //    buildTypes {
 //        debug{
 //            // 显示Log
@@ -48,10 +50,14 @@ android {
 ////            signingConfig signingConfigs.relealse
 //        }
 //    }
-
 //    lintOptions{
 //        checkReleaseBuilds true
 //    }
+    buildTypes {
+        debug {
+            jniDebuggable true
+        }
+    }
 }
 
 dependencies {
@@ -62,9 +68,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.3.0'
     compile 'com.android.support:gridlayout-v7:23.3.0'
     compile 'com.android.support:cardview-v7:23.3.0'
-  //  compile 'com.android.support:support-annotations:23.3.0'
+    //  compile 'com.android.support:support-annotations:23.3.0'
     compile 'com.nineoldandroids:library:2.4.0'
-
     compile project(':Thinkcore')
     //事件分发
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
@@ -81,9 +86,7 @@ dependencies {
     //对话框
     compile 'com.afollestad.material-dialogs:core:0.9.0.1'
     compile 'com.afollestad.material-dialogs:commons:0.9.0.1'
-
     //rxpermissions
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
-
     compile 'com.github.ksoichiro:Android-ObservableScrollView:v1.6.0'
 }

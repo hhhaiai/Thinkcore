@@ -2,9 +2,11 @@ package com.testcore.ui;
 
 import com.testcore.R;
 import com.testcore.ui.switchButton.MainActivity;
+import com.testcore.utils.NdkJniUtils;
 import com.testcore.utils.ThemeUtils;
 import com.thinkcore.ui.CoreAppActivity;
 import com.thinkcore.utils.TActivityUtils;
+import com.thinkcore.utils.log.TLog;
 
 import android.os.Bundle;
 import android.view.View;
@@ -108,6 +110,10 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			TActivityUtils.jumpToActivity(this, com.testcore.ui.rangebarsample.MainActivity.class);
 		}else if(arg0.getId() == R.id.Button_scroolview){
 			TActivityUtils.jumpToActivity(this, com.testcore.ui.observablescroll.ViewPagerTabActivity.class);
+
+			NdkJniUtils jni = new NdkJniUtils();
+			String tet = jni.getCLanguageString();
+			TLog.i(this,tet);
 		}
 	}
 }
