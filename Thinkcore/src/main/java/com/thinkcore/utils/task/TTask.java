@@ -1,6 +1,5 @@
 package com.thinkcore.utils.task;
 
-import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -8,7 +7,6 @@ import java.util.concurrent.Executors;
 import com.thinkcore.utils.TAndroidVersionUtils;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 public class TTask extends AsyncTask {
     private final static String TAG = TTask.class.getCanonicalName();
@@ -21,10 +19,7 @@ public class TTask extends AsyncTask {
         // .newSingleThreadExecutor();
         mExecutorService = (ExecutorService) Executors.newFixedThreadPool(30);// 30个线程
         // mExecutorService = (ExecutorService) Executors.newCachedThreadPool();
-    }
-
-    ;
-
+    };
 
     public TTask() {
         super();
@@ -47,6 +42,7 @@ public class TTask extends AsyncTask {
 
     @Override
     protected void onCancelled(Object o) {
+        if(TAndroidVersionUtils.hasHoneycomb())
         super.onCancelled(o);
     }
 
@@ -60,11 +56,12 @@ public class TTask extends AsyncTask {
         return null;
     }
 
-    public void execute(Objects... params) {
+
+    public void newExecute(Objects... params) {
         if (TAndroidVersionUtils.hasHoneycomb()) {
-            super.executeOnExecutor(mExecutorService, params);
+            executeOnExecutor(mExecutorService, params);
         } else {
-            super.execute(params);
+            execute(params);
         }
     }
 }
