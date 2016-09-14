@@ -116,7 +116,7 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			String tet = jni.getCLanguageString();
 			TLog.i(this,tet);
 		}else if(arg0.getId() == R.id.Button_plugin){
-			TActivityUtils.jumpToActivity(this, com.testcore.ui.rangebarsample.MainActivity.class);
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.plugin.PluginActivity.class);
 		}
 	}
 }

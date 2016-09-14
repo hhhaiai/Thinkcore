@@ -825,6 +825,5 @@ public abstract class ActivityStub extends Activity {
             public static class Standard00 extends StandardStub {
             }
         }
-
     }
 }

@@ -183,6 +183,6 @@ public class PluginHelper implements ServiceConnection {
     }
 
     public void applicationAttachBaseContext(Context baseContext) {
-        //        MyCrashHandler.getInstance().register(baseContext);
+        MyCrashHandler.getInstance().register(baseContext);
     }
 }

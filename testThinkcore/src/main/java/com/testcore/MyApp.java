@@ -1,5 +1,6 @@
 package com.testcore;
 
+import com.morgoo.droidplugin.pm.PluginManager;
 import com.thinkcore.TApplication;
 import com.thinkcore.crash.HttpReportSenderFactory;
 import com.thinkcore.storage.TFilePath;
@@ -22,6 +23,7 @@ public class MyApp extends TApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+
         ACRA.init(this);
         TLog.enablePrintToFileLogger(true);
         TFilePath filePath = new TFilePath();
