@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ThinkCore.iml" filepath="$PROJECT_DIR$/ThinkCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thinkcore/Thinkcore.iml" filepath="$PROJECT_DIR$/Thinkcore/Thinkcore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/droidplugin/droidplugin.iml" filepath="$PROJECT_DIR$/droidplugin/droidplugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/testThinkcore/testThinkcore.iml" filepath="$PROJECT_DIR$/testThinkcore/testThinkcore.iml" />
     </modules>
   </component>

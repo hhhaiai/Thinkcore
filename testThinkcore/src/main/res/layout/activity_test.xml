@@ -160,6 +160,15 @@
 			android:text="测试scroolview"
 			android:layout_marginLeft="10dip"
 			android:layout_marginRight="10dip" />
+
+
+		<Button
+			android:id="@+id/Button_plugin"
+			android:layout_width="320dp"
+			android:layout_height="wrap_content"
+			android:text="测试奇虎插件"
+			android:layout_marginLeft="10dip"
+			android:layout_marginRight="10dip" />
 	</LinearLayout>
 
 </ScrollView>

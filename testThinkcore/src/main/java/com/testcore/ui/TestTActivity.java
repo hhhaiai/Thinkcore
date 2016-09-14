@@ -45,6 +45,7 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 		findViewById(R.id.Button_setting).setOnClickListener(this);
 		findViewById(R.id.Button_rangerbar).setOnClickListener(this);
 		findViewById(R.id.Button_scroolview).setOnClickListener(this);
+		findViewById(R.id.Button_plugin).setOnClickListener(this);
 
 //		final View view = View.inflate(this, R.layout.splash, null);
 //		setContentView(view);
@@ -114,6 +115,8 @@ public class TestTActivity extends CoreAppActivity implements OnClickListener {
 			NdkJniUtils jni = new NdkJniUtils();
 			String tet = jni.getCLanguageString();
 			TLog.i(this,tet);
+		}else if(arg0.getId() == R.id.Button_plugin){
+			TActivityUtils.jumpToActivity(this, com.testcore.ui.rangebarsample.MainActivity.class);
 		}
 	}
 }

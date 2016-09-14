@@ -1,1 +1,1 @@
-include ':testThinkcore', ':Thinkcore'
+include ':testThinkcore', ':Thinkcore', ':droidplugin'
