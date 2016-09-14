@@ -43,14 +43,14 @@
 
     <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-    <uses-sdk tools:overrideLibrary="rx.android,com.golshadi.majid"/>
+    <uses-sdk tools:overrideLibrary="rx.android,com.golshadi.majid" />
 
     <application
         android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:theme="@style/AppThemeLight"
-        android:label="@string/app_name">
+        android:label="@string/app_name"
+        android:theme="@style/AppThemeLight">
         <activity
             android:name=".ui.TestTActivity"
             android:label="@string/app_name">
@@ -67,133 +67,106 @@
         </activity>
         <activity
             android:name=".ui.DownloadActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.DialogActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.RippleActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.BetterSpinnerActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.switchButton.MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.switchButton.RecyclerActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.switchButton.StyleActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.switchButton.StyleInCodeActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.switchButton.UseActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.SwipyRefreshActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.SnackbarActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.RippleViewActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.reveallayout.FragmentSampleActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.reveallayout.MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.reveallayout.MultiChildActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.reveallayout.SingleChildActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.DiscreteseekbarActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.materialdesigndemo.ButtonsActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.materialdesigndemo.MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.materialdesigndemo.ProgressActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.materialdesigndemo.SwitchActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.materialdesigndemo.WidgetActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.fd.MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.fd.RecyclerViewActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name=".ui.SettingsActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.fd.FloatingMenusActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
 
         <activity
             android:name=".ui.rangebarsample.MainActivity"
-            android:label="@string/app_name">
-        </activity>
+            android:label="@string/app_name"></activity>
         <activity
             android:name="org.acra.dialog.CrashReportDialog"
-            android:theme="@android:style/Theme.Dialog"
-            android:launchMode="singleInstance"
             android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleInstance"
 
-            android:finishOnTaskLaunch="true"/>
+            android:theme="@android:style/Theme.Dialog" />
 
         <service
             android:name="org.acra.sender.SenderService"
@@ -203,8 +176,7 @@
 
         <activity
             android:name=".ui.observablescroll.MainActivity"
-            android:label="@string/title_activity_main">
-        </activity>
+            android:label="@string/title_activity_main"></activity>
         <activity
             android:name=".ui.observablescroll.AboutActivity"
             android:label="@string/title_activity_about" />
@@ -255,8 +227,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FillGap2ListViewActivity"
-            android:label="@string/title_activity_fillgaplistview"
-            >
+            android:label="@string/title_activity_fillgaplistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -265,8 +236,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FillGap2RecyclerViewActivity"
-            android:label="@string/title_activity_fillgaprecyclerview"
-            >
+            android:label="@string/title_activity_fillgaprecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -329,8 +299,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FillGapScrollViewActivity"
-            android:label="@string/title_activity_fillgapscrollview"
-            >
+            android:label="@string/title_activity_fillgapscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -339,8 +308,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceToolbarScrollViewActivity"
-            android:label="@string/title_activity_flexiblespacetoolbarscrollview"
-            >
+            android:label="@string/title_activity_flexiblespacetoolbarscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -349,8 +317,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceWithImageGridViewActivity"
-            android:label="@string/title_activity_flexiblespacewithimagegridview"
-            >
+            android:label="@string/title_activity_flexiblespacewithimagegridview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -359,8 +326,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceWithImageScrollViewActivity"
-            android:label="@string/title_activity_flexiblespacewithimagescrollview"
-            >
+            android:label="@string/title_activity_flexiblespacewithimagescrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -369,8 +335,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceWithImageRecyclerViewActivity"
-            android:label="@string/title_activity_flexiblespacewithimageRecyclerview"
-            >
+            android:label="@string/title_activity_flexiblespacewithimageRecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -379,8 +344,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceWithImageWithViewPagerTabActivity"
-            android:label="@string/title_activity_flexiblespacewithimagewithviewpagertab"
-            >
+            android:label="@string/title_activity_flexiblespacewithimagewithviewpagertab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -389,8 +353,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceWithImageWithViewPagerTab2Activity"
-            android:label="@string/title_activity_flexiblespacewithimagewithviewpagertab2"
-            >
+            android:label="@string/title_activity_flexiblespacewithimagewithviewpagertab2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -399,8 +362,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceWithImageListViewActivity"
-            android:label="@string/title_activity_flexiblespacewithimagelistview"
-            >
+            android:label="@string/title_activity_flexiblespacewithimagelistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -409,8 +371,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FlexibleSpaceToolbarWebViewActivity"
-            android:label="@string/title_activity_flexiblespacewithwebview"
-            >
+            android:label="@string/title_activity_flexiblespacewithwebview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -429,8 +390,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.FragmentTransitionActivity"
-            android:label="@string/title_activity_fragmenttransition"
-            >
+            android:label="@string/title_activity_fragmenttransition">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -439,8 +399,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.HandleTouchGridViewActivity"
-            android:label="@string/title_activity_handletouchgridview"
-            >
+            android:label="@string/title_activity_handletouchgridview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -449,8 +408,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.HandleTouchListViewActivity"
-            android:label="@string/title_activity_handletouchlistview"
-            >
+            android:label="@string/title_activity_handletouchlistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -459,8 +417,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.HandleTouchRecyclerViewActivity"
-            android:label="@string/title_activity_handletouchrecyclerview"
-            >
+            android:label="@string/title_activity_handletouchrecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -469,8 +426,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.HandleTouchScrollViewActivity"
-            android:label="@string/title_activity_handletouchscrollview"
-            >
+            android:label="@string/title_activity_handletouchscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -479,8 +435,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.HandleTouchWebViewActivity"
-            android:label="@string/title_activity_handletouchwebview"
-            >
+            android:label="@string/title_activity_handletouchwebview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -489,8 +444,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ParallaxToolbarGridViewActivity"
-            android:label="@string/title_activity_parallaxtoolbargridview"
-            >
+            android:label="@string/title_activity_parallaxtoolbargridview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -499,8 +453,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ParallaxToolbarListViewActivity"
-            android:label="@string/title_activity_parallaxtoolbarlistview"
-            >
+            android:label="@string/title_activity_parallaxtoolbarlistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -509,8 +462,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ParallaxToolbarScrollViewActivity"
-            android:label="@string/title_activity_parallaxtoolbarscrollview"
-            >
+            android:label="@string/title_activity_parallaxtoolbarscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -519,8 +471,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ScrollFromBottomListViewActivity"
-            android:label="@string/title_activity_scrollfrombottomlistview"
-            >
+            android:label="@string/title_activity_scrollfrombottomlistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -529,8 +480,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ScrollFromBottomRecyclerViewActivity"
-            android:label="@string/title_activity_scrollfrombottomrecyclerview"
-            >
+            android:label="@string/title_activity_scrollfrombottomrecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -539,8 +489,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.SlidingUpGridViewActivity"
-            android:label="@string/title_activity_slidingupgridview"
-            >
+            android:label="@string/title_activity_slidingupgridview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -549,8 +498,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.SlidingUpListViewActivity"
-            android:label="@string/title_activity_slidinguplistview"
-            >
+            android:label="@string/title_activity_slidinguplistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -559,8 +507,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.SlidingUpRecyclerViewActivity"
-            android:label="@string/title_activity_slidinguprecyclerview"
-            >
+            android:label="@string/title_activity_slidinguprecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -569,8 +516,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.SlidingUpScrollViewActivity"
-            android:label="@string/title_activity_slidingupscrollview"
-            >
+            android:label="@string/title_activity_slidingupscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -579,8 +525,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.SlidingUpWebViewActivity"
-            android:label="@string/title_activity_slidingupwebview"
-            >
+            android:label="@string/title_activity_slidingupwebview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -589,8 +534,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.StickyHeaderListViewActivity"
-            android:label="@string/title_activity_stickyheaderlistview"
-            >
+            android:label="@string/title_activity_stickyheaderlistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -599,8 +543,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.StickyHeaderRecyclerViewActivity"
-            android:label="@string/title_activity_stickyheaderrecyclerview"
-            >
+            android:label="@string/title_activity_stickyheaderrecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -609,8 +552,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.StickyHeaderScrollViewActivity"
-            android:label="@string/title_activity_stickyheaderscrollview"
-            >
+            android:label="@string/title_activity_stickyheaderscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -619,8 +561,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.StickyHeaderWebViewActivity"
-            android:label="@string/title_activity_stickyheaderwebview"
-            >
+            android:label="@string/title_activity_stickyheaderwebview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -629,8 +570,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ToolbarControlGridViewActivity"
-            android:label="@string/title_activity_toolbarcontrolgridview"
-            >
+            android:label="@string/title_activity_toolbarcontrolgridview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -639,8 +579,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ToolbarControlListViewActivity"
-            android:label="@string/title_activity_toolbarcontrollistview"
-            >
+            android:label="@string/title_activity_toolbarcontrollistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -649,8 +588,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ToolbarControlRecyclerViewActivity"
-            android:label="@string/title_activity_toolbarcontrolrecyclerview"
-            >
+            android:label="@string/title_activity_toolbarcontrolrecyclerview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -659,8 +597,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ToolbarControlScrollViewActivity"
-            android:label="@string/title_activity_toolbarcontrolscrollview"
-            >
+            android:label="@string/title_activity_toolbarcontrolscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -669,8 +606,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ToolbarControlWebViewActivity"
-            android:label="@string/title_activity_toolbarcontrolwebview"
-            >
+            android:label="@string/title_activity_toolbarcontrolwebview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -679,8 +615,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ViewPagerTab2Activity"
-            android:label="@string/title_activity_viewpagertab2"
-            >
+            android:label="@string/title_activity_viewpagertab2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -689,8 +624,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ViewPagerTabActivity"
-            android:label="@string/title_activity_viewpagertab"
-            >
+            android:label="@string/title_activity_viewpagertab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -699,8 +633,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ViewPagerTabFragmentActivity"
-            android:label="@string/title_activity_viewpagertabfragment"
-            >
+            android:label="@string/title_activity_viewpagertabfragment">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -709,8 +642,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ViewPagerTabListViewActivity"
-            android:label="@string/title_activity_viewpagertablistview"
-            >
+            android:label="@string/title_activity_viewpagertablistview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -719,8 +651,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ViewPagerTabScrollViewActivity"
-            android:label="@string/title_activity_viewpagertabscrollview"
-            >
+            android:label="@string/title_activity_viewpagertabscrollview">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -729,8 +660,7 @@
         </activity>
         <activity
             android:name=".ui.observablescroll.ViewPagerTabScrollViewWithFabActivity"
-            android:label="@string/title_activity_viewpagertabscrollviewwithfab"
-            >
+            android:label="@string/title_activity_viewpagertabscrollviewwithfab">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -739,4 +669,153 @@
         </activity>
     </application>
 
+
+    <!--预申请很多权限。也是为了插件使用-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIMAX_STATE" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIMAX_STATE" />
+    <uses-permission android:name="android.permission.CLEAR_APP_CACHE" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.GET_PACKAGE_SIZE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.PERSISTENT_ACTIVITY" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.READ_CELL_BROADCASTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_INSTALL_SESSIONS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_SOCIAL_STREAM" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <uses-permission android:name="android.permission.READ_USER_DICTIONARY" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.SET_TIME_ZONE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER_HINTS" />
+    <uses-permission android:name="android.permission.SUBSCRIBED_FEEDS_READ" />
+    <uses-permission android:name="android.permission.SUBSCRIBED_FEEDS_WRITE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.TRANSMIT_IR" />
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_PROFILE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SOCIAL_STREAM" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_USER_DICTIONARY" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="com.android.browser.permission.READ_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="com.android.browser.permission.WRITE_HISTORY_BOOKMARKS" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.android.vending.CHECK_LICENSE" />
+    <uses-permission android:name="com.android.voicemail.permission.ADD_VOICEMAIL" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID_NOTIFICATION" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.OTHER_SERVICES" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.YouTubeUser" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.adsense" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.adwords" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.ah" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.android" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.androidsecure" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.blogger" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.cl" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.cp" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.dodgeball" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.finance" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.gbase" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.grandcentral" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.groups2" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.health" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.ig" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.jotspot" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.knol" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.lh2" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.local" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.mail" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.mobile" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.news" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.notebook" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.orkut" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.print" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.sierra" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.sierraqa" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.sierrasandbox" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.sitemaps" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.speech" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.speechpersonalization" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.talk" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.wifi" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.wise" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.writely" />
+    <uses-permission android:name="com.google.android.googleapps.permission.GOOGLE_AUTH.youtube" />
+    <uses-permission android:name="com.google.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.google.android.providers.talk.permission.READ_ONLY" />
+    <uses-permission android:name="com.google.android.providers.talk.permission.WRITE_ONLY" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.READ_OWNER_DATA" />
+    <uses-permission android:name="android.permission.WRITE_OWNER_DATA" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.qihoo.appstore.rtservice.ACCESS_RTSERVICE" />
+    <uses-permission android:name="android.permission.SEND_DOWNLOAD_COMPLETED_INTENTS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS_FULL" />
+
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 </manifest>
