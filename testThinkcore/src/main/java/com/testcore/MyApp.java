@@ -1,5 +1,8 @@
 package com.testcore;
 
+import android.content.Context;
+
+import com.morgoo.droidplugin.PluginHelper;
 import com.morgoo.droidplugin.pm.PluginManager;
 import com.thinkcore.TApplication;
 import com.thinkcore.crash.HttpReportSenderFactory;
@@ -23,8 +26,9 @@ public class MyApp extends TApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
         ACRA.init(this);
+        PluginHelper.getInstance().applicationOnCreate(getBaseContext());
+
         TLog.enablePrintToFileLogger(true);
         TFilePath filePath = new TFilePath();
         String path = filePath.getInterAppDir();
@@ -47,5 +51,12 @@ public class MyApp extends TApplication {
         TLog.i(this,path);
         path = filePath.getExternalDownloadDir();
         TLog.i(this,path);
+    }
+
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        PluginHelper.getInstance().applicationAttachBaseContext(base);
+        super.attachBaseContext(base);
     }
 }

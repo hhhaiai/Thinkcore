@@ -2,7 +2,6 @@ package com.thinkcore;
 
 import java.util.List;
 
-import com.morgoo.droidplugin.PluginApplication;
 import com.thinkcore.utils.config.TPreferenceConfig;
 import com.thinkcore.utils.config.TPropertiesConfig;
 import com.thinkcore.utils.network.INetChangeListener;
@@ -17,7 +16,7 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 
 //程序app
-public class TApplication extends PluginApplication implements
+public class TApplication extends Application implements
 		INetChangeListener {
 
 	protected static TApplication mThis = null;
@@ -140,4 +139,5 @@ public class TApplication extends PluginApplication implements
 		}
 		return null;
 	}
+
 }
